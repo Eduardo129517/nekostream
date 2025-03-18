@@ -1,0 +1,260 @@
+<html>
+
+<head>
+  <title>Johnny's Bizarre Adventure</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    .game-container {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('img/sbrgame/cenario.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ground {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(#4CAF50, #2E7D32);
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    #johnny {
+      position: absolute;
+      bottom: 100px;
+      left: 50px;
+      width: 80px;
+      /* Reduced from 100px */
+      height: 100px;
+      /* Reduced from 120px */
+      background-image: url('img/sbrgame/Johnny_Joestar.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: transform 0.3s;
+      filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4));
+    }
+
+    .jump {
+      animation: jump 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes jump {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-200px) rotate(180deg);
+      }
+
+      100% {
+        transform: translateY(0) rotate(360deg);
+      }
+    }
+
+    .obstacle {
+      position: absolute;
+      bottom: 100px;
+      width: 60px;
+      /* Reduced from 80px */
+      height: 80px;
+      /* Reduced from 100px */
+      background-image: url('img/sbrgame/Funny_Valentine.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.4));
+    }
+
+    @keyframes moveLeft {
+      from {
+        left: 100%;
+      }
+
+      to {
+        left: -100px;
+      }
+    }
+
+    .score {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 32px;
+      color: #fff;
+      text-shadow: 2px 2px #000;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .game-over {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 24px;
+      border: 3px solid #4CAF50;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="game-container">
+    <div class="score">Score: <span id="scoreValue">0</span></div>
+    <div id="johnny"></div>
+    <div class="ground"></div>
+    <div class="game-over" id="gameOver">
+      Game Over!<br>
+      Press Space to restart
+    </div>
+  </div>
+
+  <script>
+    const johnny = document.getElementById('johnny');
+    const gameContainer = document.querySelector('.game-container');
+    const scoreElement = document.getElementById('scoreValue');
+    const gameOverScreen = document.getElementById('gameOver');
+
+    let isJumping = false;
+    let score = 0;
+    let gameActive = true;
+    let obstacleSpeed = 2; // Initial speed in seconds
+    let spawnInterval = 2000; // Initial spawn interval in milliseconds
+
+    function jump() {
+      if (!isJumping && gameActive) {
+        isJumping = true;
+        johnny.classList.add('jump');
+
+        setTimeout(() => {
+          johnny.classList.remove('jump');
+          isJumping = false;
+        }, 500);
+      }
+    }
+
+    function createObstacle() {
+      if (!gameActive) return;
+
+      const obstacle = document.createElement('div');
+      obstacle.classList.add('obstacle');
+      obstacle.style.left = '100%';
+      obstacle.style.animation = `moveLeft ${obstacleSpeed}s linear`;
+      gameContainer.appendChild(obstacle);
+
+      obstacle.addEventListener('animationend', () => {
+        obstacle.remove();
+        score += 10;
+        scoreElement.textContent = score;
+
+        // Increase difficulty gradually
+        if (obstacleSpeed > 0.8) { // Minimum speed limit
+          obstacleSpeed -= 0.05;
+        }
+        if (spawnInterval > 1000) { // Minimum spawn interval
+          spawnInterval -= 20;
+        }
+      });
+
+      checkCollision(obstacle);
+    }
+
+    function checkCollision(obstacle) {
+      const collisionCheck = setInterval(() => {
+        if (!gameActive) {
+          clearInterval(collisionCheck);
+          return;
+        }
+
+        const johnnyRect = johnny.getBoundingClientRect();
+        const obstacleRect = obstacle.getBoundingClientRect();
+
+        const collisionBuffer = 20; // Makes collision detection more forgiving
+
+        if (
+          johnnyRect.left < obstacleRect.right - collisionBuffer &&
+          johnnyRect.right > obstacleRect.left + collisionBuffer &&
+          johnnyRect.bottom > obstacleRect.top + collisionBuffer
+        ) {
+          gameOver();
+          clearInterval(collisionCheck);
+        }
+      }, 10);
+    }
+
+    function gameOver() {
+      gameActive = false;
+      gameOverScreen.style.display = 'block';
+      Array.from(document.getElementsByClassName('obstacle')).forEach(obs => obs.remove());
+    }
+
+    function restartGame() {
+      if (!gameActive) {
+        gameActive = true;
+        score = 0;
+        obstacleSpeed = 2; // Reset speed
+        spawnInterval = 2000; // Reset spawn interval
+        scoreElement.textContent = score;
+        gameOverScreen.style.display = 'none';
+        startObstacleGeneration();
+      }
+    }
+
+    function startObstacleGeneration() {
+      createObstacle(); // Create first obstacle immediately
+
+      const intervalId = setInterval(() => {
+        if (!gameActive) {
+          clearInterval(intervalId);
+          return;
+        }
+        createObstacle();
+      }, spawnInterval);
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.code === 'Space') {
+        event.preventDefault(); // Prevent page scrolling
+        if (gameActive) {
+          jump();
+        } else {
+          restartGame();
+        }
+      }
+    });
+
+    // Touch support for mobile devices
+    document.addEventListener('touchstart', (event) => {
+      event.preventDefault();
+      if (gameActive) {
+        jump();
+      } else {
+        restartGame();
+      }
+    });
+
+    startObstacleGeneration();
+
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</body>
+
+</html>

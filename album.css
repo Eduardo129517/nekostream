@@ -1,0 +1,136 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  background-color: #222;
+}
+.card-img-top {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.play-button {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+.play-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.play-icon {
+  width: 0;
+  height: 0;
+  border-left: 18px solid white;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+.text-white {
+  color: #fff;
+}
+
+:root {
+    --jumbotron-padding-y: 3rem;
+  }
+  
+  .jumbotron {
+    padding-top: var(--jumbotron-padding-y);
+    padding-bottom: var(--jumbotron-padding-y);
+    margin-bottom: 0;
+    background-color: #000000;
+  }
+  
+  .jumbotron p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .jumbotron-heading {
+    font-weight: 300;
+  }
+  
+  .jumbotron .container {
+    max-width: 40rem;
+  }
+  
+  .footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .footer p {
+    margin-bottom: .25rem;
+  }
+  
+  .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); 
+                border: #000000;
+  }
+
+  body {
+    background-color: #000000;
+  }
+
+  .btn-orange {
+    background-color: orange;
+    border-color: orange;
+    color: white;
+}
+
+.custom-btn {
+  background-color: orange;  /* Define a cor de fundo laranja */
+  color: white;  /* Define a cor do texto como branco */
+  border-radius: 10px;  /* Deixa as bordas arredondadas */
+  border: 2px solid orange;  /* Define a borda da mesma cor do fundo */
+}
+
+.custom-btn:hover {
+  background-color: darkorange;  /* Muda a cor ao passar o mouse */
+  border-color: darkorange;  /* Muda a cor da borda ao passar o mouse */
+}
+
+.btn-premium-plus {
+  background-color: orange; /* Cor de fundo laranja */
+  color: black; /* Cor do texto branca */
+}
+
+.btn-premium {
+  background-color: white; /* Cor de fundo branca */
+  color: black; /* Cor do texto preta (ou qualquer cor que desejar) */
+  border: 1px solid #ccc; /* Adiciona uma borda leve para distinguir o botão */
+}
+
+.tab-content {
+  padding: 20px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #222;
+}
+.nav-pills .nav-link {
+  color: #fff;
+  background-color: #333;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin: 0 5px;
+  transition: background-color 0.3s;
+}
+.nav-link.active {
+  background-color: #555;
+}
+.nav-link:hover {
+  background-color: #666;
+}

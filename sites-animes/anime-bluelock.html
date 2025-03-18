@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streaming Blue Lock</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/animes.css">
+  <link rel="icon" href="img/icon.png">
+
+  <style>
+    /* O conteúdo extra é oculto quando a página é carregada */
+    #moreContent {
+      display: none;
+    }
+
+    .link-estilo {
+      color: orange;
+      text-decoration: none;
+      /* remove sublinhado */
+    }
+
+    .link-estilo:hover {
+      cursor: pointer;
+      /* faz aparecer a mãozinha */
+      text-decoration: underline;
+      /* opcional: adiciona sublinhado quando o mouse estiver sobre o link */
+    }
+
+    /* O conteúdo extra é oculto quando a página é carregada */
+    #moreContent {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Add some information about the album below, the author, or any other background
+              context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off
+              to some social networking sites or contact information.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="../index.html" class="navbar-brand d-flex align-items-center">
+          <img src="img/icon.png" alt="" width="10%" height="10%">
+          <strong>Neko Stream</strong>
+        </a>
+        <a href="../index.html" class="btn btn-outline-light">Volta ao menu</a>
+      </div>
+    </div>
+  </header>
+
+  <header class="bg-dark text-white p-3 text-center">
+    <h1>Streaming - Blue Lock</h1>
+  </header>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="video-container">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/RezlceK7wiM"
+              title="Bleach Streaming" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Descrição sobre Blue Lock -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="text-start">
+          Blue Lock | 8.23★
+          <img src="img/14.png" style="height: 1em; width: 1em; vertical-align: middle;">
+          <span style="margin-left: 10px;">
+            <button id="likeButton" class="btn btn-outline-success btn-sm" onclick="addVote(true)">
+              👍 <span id="likeCount">0</span>
+            </button>
+            <button id="dislikeButton" class="btn btn-outline-danger btn-sm" onclick="addVote(false)">
+              👎 <span id="dislikeCount">0</span>
+            </button>
+          </span>
+        </h2>
+
+        <p>Blue Lock é uma série de anime e mangá escrita por Muneyuki Kaneshiro e ilustrada por Yusuke Nomura, que
+          começou a ser publicada na Weekly Young Jump em 2018. A história se concentra em uma abordagem inovadora do
+          futebol, onde a pressão para se tornar o melhor jogador do mundo é colocada em um grupo de jovens atacantes,
+          convocados para participar de um intenso programa de treinamento chamado Blue Lock.</p>
+        <div id="moreContent">
+          <p>Após uma série de fracassos da seleção japonesa de futebol, a federação decide implementar Blue Lock, um
+            projeto destinado a descobrir o "Melhor Atacante do Mundo". O protagonista, Yoichi Isagi, é um jovem
+            atacante que, após perder uma partida crucial, se vê motivado a superar seus limites e provar seu valor.
+            Durante o treinamento, ele enfrenta outros talentos promissores, cada um com suas próprias habilidades,
+            ambições e estilos de jogo.</p>
+          <p>O formato da série é marcado por um sistema de eliminação, onde os participantes devem competir entre si em
+            uma série de partidas intensas e desafiadoras. Isso cria uma atmosfera de rivalidade feroz, onde os
+            jogadores precisam não apenas confiar em suas habilidades, mas também aprender a trabalhar em equipe e a se
+            adaptar a diferentes estratégias de jogo. Blue Lock explora temas de ambição, ego e o verdadeiro significado
+            de ser um atacante, onde cada personagem deve confrontar suas próprias inseguranças e motivação.</p>
+          <p>O mangá é conhecido por suas ilustrações dinâmicas e emocionantes que capturam a intensidade das partidas
+            de futebol, assim como o desenvolvimento psicológico dos personagens. Entre os personagens mais notáveis
+            estão Reo Mikage, um talentoso meio-campista, e Rin Itoshi, um prodígio que se torna um rival formidável
+            para Isagi. Cada personagem traz sua própria narrativa e desafios, contribuindo para um enredo envolvente e
+            imprevisível.</p>
+          <p>Blue Lock não só reimagina a competição no futebol, mas também apresenta uma crítica à cultura do esporte,
+            destacando a pressão extrema que atletas enfrentam para se destacar em um cenário competitivo. Com sua
+            mistura de ação, drama e desenvolvimento de personagens, a série conquistou uma base de fãs significativa e
+            se tornou uma das obras mais aclamadas do gênero esportivo.</p>
+          <p>Com a popularidade crescente, Blue Lock ganhou uma adaptação para anime que começou a ser exibida em 2022,
+            trazendo a história para uma nova audiência e solidificando seu lugar como uma referência moderna no mundo
+            dos animes de esportes. A série promete continuar a impressionar os fãs com suas intensas competições e o
+            crescimento dos personagens em busca de seus sonhos.</p>
+        </div>
+        <a onclick="showMore()" class="link-estilo">Mostrar mais</a>
+      </div>
+      <div class="col-md-4">
+        <h5 style="text-align: center;">Veja também</h5>
+
+        <div class="video-container">
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/hTfnf4y-sgQ"
+              title="Bleach Streaming" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider-container">
+    <canvas id="divider" width="800" height="4"></canvas>
+  </div>
+
+  <div class="comments-section">
+    <h2>Comentários</h2>
+    <div class="new-comment">
+      <input type="text" id="commentAuthor" placeholder="Seu nome">
+      <textarea id="commentText" placeholder="Escreva seu comentário..."></textarea>
+      <button onclick="addComment()">Enviar Comentário</button>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">DStriker_Isagi</div>
+          <div class="comment-date">2 horas atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        Esse anime é tudo que eu queria ver sobre futebol! O desenvolvimento do Isagi é insano. Ele começou sem confiança, e agora tá mostrando como se faz um verdadeiro atacante. Amo essa jornada!
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">NagiMaster</div>
+          <div class="comment-date">13 horas atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        A filosofia de Blue Lock é tão intensa! Esse conceito de transformar os jogadores em atacantes egoístas é incrível. Finalmente um anime de futebol que não se preocupa em ser clichê!!
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">StrikerDisappointed</div>
+          <div class="comment-date">12 dia atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        Eu estava muito empolgado pra segunda temporada, mas tenho que admitir que a qualidade da animação caiu. As cenas de ação estão menos intensas, e parece que alguns detalhes foram deixados de lado. Blue Lock é sobre energia e emoção em campo, e essa temporada tá perdendo um pouco disso. Espero que melhore nos próximos episódios, porque a história merece uma adaptação à altura!
+      </div>
+    </div>
+  </div>
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>© 2024 Streaming Blue Lock - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function drawDivider() {
+      const canvas = document.getElementById('divider');
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+
+      const gradient = ctx.createLinearGradient(0, 0, width, 0);
+      gradient.addColorStop(0, 'rgba(241, 196, 15, 0)');
+      gradient.addColorStop(0.5, 'rgba(241, 196, 15, 1)');
+      gradient.addColorStop(1, 'rgba(241, 196, 15, 0)');
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, 4);
+    }
+
+    function addComment() {
+      const author = document.getElementById('commentAuthor').value;
+      const text = document.getElementById('commentText').value;
+
+      if (!author || !text) {
+        alert('Por favor, preencha todos os campos!');
+        return;
+      }
+
+      const commentsSection = document.querySelector('.comments-section');
+      const newCommentDiv = document.createElement('div');
+      newCommentDiv.className = 'comment';
+      newCommentDiv.innerHTML = `
+        <div class="comment-header">
+            <div class="comment-avatar"></div>
+            <div class="comment-info">
+                <div class="comment-author">${author}</div>
+                <div class="comment-date">Agora mesmo</div>
+            </div>
+        </div>
+        <div class="comment-content">${text}</div>
+    `;
+
+      const firstComment = document.querySelector('.comment');
+      commentsSection.insertBefore(newCommentDiv, firstComment);
+
+      document.getElementById('commentAuthor').value = '';
+      document.getElementById('commentText').value = '';
+    }
+
+    drawDivider();
+
+    window.addEventListener('resize', function () {
+      const canvas = document.getElementById('divider');
+      canvas.width = Math.min(800, window.innerWidth - 40);
+      drawDivider();
+    });
+
+    window.dispatchEvent(new Event('resize'));
+
+    function showMore() {
+      var moreContent = document.getElementById("moreContent");
+      var link = document.querySelector(".link-estilo");
+
+      if (moreContent.style.display === "none") {
+        moreContent.style.display = "block";
+        link.textContent = "Mostrar menos";
+      } else {
+        moreContent.style.display = "none";
+        link.textContent = "Mostrar mais";
+      }
+    }
+
+    const totalViews = 395291;
+    let likeCount;
+    let dislikeCount;
+
+    function initializeCounts() {
+      likeCount = Math.floor(totalViews * (0.75 + Math.random() * 0.1));
+      dislikeCount = totalViews - likeCount;
+
+      document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+      document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+    }
+
+    function addVote(isLike) {
+      if (isLike) {
+        likeCount++;
+        document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+      } else {
+        dislikeCount++;
+        document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+      }
+    }
+
+    window.onload = initializeCounts;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

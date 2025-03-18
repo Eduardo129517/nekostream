@@ -1,0 +1,441 @@
+<html>
+
+<head>
+    <title>Jujutsu Kaisen: Gojo's Battle</title>
+    <link rel="icon" href="../img/icon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1a1a;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        #gameContainer {
+            width: 800px;
+            height: 600px;
+            margin: 20px auto;
+            position: relative;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600"><rect width="800" height="600" fill="%232b2b2b"/><path d="M0 0l800 600M800 0L0 600" stroke="%23333" stroke-width="2"/></svg>');
+            border: 4px solid #333;
+            overflow: hidden;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background: purple;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .back-button:hover {
+            background: red;
+        }
+
+        #player,
+        .enemy {
+            width: 100px;
+            height: 150px;
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #player {
+            bottom: 50px;
+            left: 50px;
+            background-image: url('img/jujutsujogo/gojo.png');
+        }
+
+        .enemy {
+            right: 50px;
+            bottom: 50px;
+            background-image: url('img/jujutsujogo/sukuna.png');
+        }
+
+        .attack-effect {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            pointer-events: none;
+            background-image: url('img/jujutsujogo/vazioroxo.png');
+            background-size: contain;
+            animation: attackAnim 0.5s forwards;
+        }
+
+        @keyframes attackAnim {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        #void-shield {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            display: none;
+            background-image: url('img/jujutsujogo/escudoroxo.png');
+            background-size: contain;
+            animation: shieldPulse 2s infinite;
+        }
+
+        @keyframes shieldPulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        #ui-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #healthBar {
+            width: 300px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #fff;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        #health {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            transition: width 0.3s;
+        }
+
+        #power-gauge {
+            width: 200px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #power {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #2196F3, #03A9F4);
+            transition: width 0.3s;
+        }
+
+        .combo-counter {
+            position: absolute;
+            font-size: 48px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @keyframes comboPopup {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
+        #game-over {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: #e24a4a;
+            text-align: center;
+        }
+
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Jujutsu Kaisen: Gojo's Battle</p>
+    <br><br>
+    <a href="telasdejogos.html" class="back-button">Voltar ao Menu</a>
+    <div id="gameContainer">
+        <div id="ui-container">
+            <div id="healthBar">
+                <div id="health"></div>
+            </div>
+            <div id="power-gauge">
+                <div id="power"></div>
+            </div>
+            <div id="level-display">Level: 1</div>
+        </div>
+        <div id="player"></div>
+        <div id="void-shield"></div>
+        <div id="enemy" class="enemy"></div>
+        <div id="game-over">Game Over</div>
+    </div>
+    <div class="controls">
+        <p>
+            Controles: WASD para mover, Clique Esquerdo para atacar, Clique Direito para ataque especial, Espaço para escudo do vazio.</p>
+    </div>
+
+    <script>
+        const player = {
+            element: document.getElementById('player'),
+            x: 50,
+            y: 50,
+            health: 100,
+            power: 100,
+            speed: 8,
+            isAttacking: false,
+            combo: 0,
+            lastAttackTime: 0
+        };
+
+        const enemy = {
+            element: document.getElementById('enemy'),
+            x: 650,
+            y: 50,
+            health: 100,
+            speed: 4,
+            damage: 10,
+            attackCooldown: 1000,
+            lastAttack: 0
+        };
+
+        let currentLevel = 1;
+        let voidShieldActive = false;
+        const voidShield = document.getElementById('void-shield');
+        const healthBar = document.getElementById('health');
+        const powerBar = document.getElementById('power');
+        const enemyElement = document.getElementById('enemy');
+
+        function updateEnemyUI() {
+            const enemyHealthPercent = (enemy.health / (100 + (currentLevel - 1) * 50)) * 100;
+            enemyElement.style.setProperty('--health', enemyHealthPercent + '%');
+        }
+
+        function createAttackEffect(x, y) {
+            const effect = document.createElement('div');
+            effect.className = 'attack-effect';
+            effect.style.left = x - 100 + 'px';
+            effect.style.top = y - 100 + 'px';
+            gameContainer.appendChild(effect);
+            setTimeout(() => effect.remove(), 500);
+        }
+
+        function showCombo(x, y, combo) {
+            const comboText = document.createElement('div');
+            comboText.className = 'combo-counter';
+            comboText.textContent = combo + ' Hit!';
+            comboText.style.left = x + 'px';
+            comboText.style.top = y + 'px';
+            comboText.style.animation = 'comboPopup 1s forwards';
+            gameContainer.appendChild(comboText);
+            setTimeout(() => comboText.remove(), 1000);
+        }
+
+        function handleMouseAttack(e) {
+            const rect = gameContainer.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            if (e.button === 0) { // Left click
+                normalAttack(x, y);
+            } else if (e.button === 2) { // Right click
+                specialAttack(x, y);
+            }
+        }
+
+        function normalAttack(targetX, targetY) {
+            if (Date.now() - player.lastAttackTime < 200) return;
+
+            player.lastAttackTime = Date.now();
+            createAttackEffect(targetX, targetY);
+
+            const enemyRect = enemy.element.getBoundingClientRect();
+            const gameRect = gameContainer.getBoundingClientRect();
+            const enemyX = enemyRect.left - gameRect.left + enemyRect.width / 2;
+            const enemyY = enemyRect.top - gameRect.top + enemyRect.height / 2;
+
+            const dx = targetX - enemyX;
+            const dy = targetY - enemyY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 100) {
+                enemy.health -= 10 * (1 + player.combo * 0.1);
+                player.combo++;
+                showCombo(targetX, targetY, player.combo);
+                updateEnemyUI();
+                if (enemy.health <= 0) nextLevel();
+            }
+        }
+
+        function specialAttack(targetX, targetY) {
+            if (player.power < 30) return;
+
+            player.power -= 30;
+            powerBar.style.width = player.power + '%';
+
+            createAttackEffect(targetX, targetY);
+
+            const enemyRect = enemy.element.getBoundingClientRect();
+            const gameRect = gameContainer.getBoundingClientRect();
+            const enemyX = enemyRect.left - gameRect.left + enemyRect.width / 2;
+            const enemyY = enemyRect.top - gameRect.top + enemyRect.height / 2;
+
+            const dx = targetX - enemyX;
+            const dy = targetY - enemyY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 150) {
+                enemy.health -= 30;
+                updateEnemyUI();
+                if (enemy.health <= 0) nextLevel();
+            }
+        }
+
+        function nextLevel() {
+            currentLevel++;
+            document.getElementById('level-display').textContent = 'Level: ' + currentLevel;
+
+            if (currentLevel > 5) {
+                alert('Congratulations! You beat the game!');
+                location.reload();
+                return;
+            }
+
+            const maxHealth = 100 + (currentLevel - 1) * 50;
+            enemy.health = maxHealth;
+            enemy.damage += 5;
+            enemy.speed += 1;
+            updateEnemyUI();
+        }
+
+        function updateHealth() {
+            healthBar.style.width = player.health + '%';
+        }
+
+        function activateVoidShield() {
+            if (!voidShieldActive) {
+                voidShieldActive = true;
+                voidShield.style.display = 'block';
+                voidShield.style.left = (player.x - 50) + 'px';
+                voidShield.style.top = (player.y - 50) + 'px';
+                setTimeout(() => {
+                    voidShieldActive = false;
+                    voidShield.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        function updateGame() {
+            if (player.health <= 0) {
+                document.getElementById('game-over').style.display = 'block';
+                return;
+            }
+
+            // Enemy AI
+            if (Date.now() - enemy.lastAttack > enemy.attackCooldown) {
+                const dx = player.x - enemy.x;
+                const dy = player.y - enemy.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 100 && !voidShieldActive) {
+                    player.health -= enemy.damage;
+                    player.combo = 0;
+                    enemy.lastAttack = Date.now();
+                    updateHealth();
+                }
+            }
+
+            // Power regeneration
+            if (player.power < 100) {
+                player.power += 0.1;
+                powerBar.style.width = player.power + '%';
+            }
+
+            requestAnimationFrame(updateGame);
+        }
+
+        const gameContainer = document.getElementById('gameContainer');
+        gameContainer.addEventListener('mousedown', handleMouseAttack);
+        gameContainer.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            switch (e.key.toLowerCase()) {
+                case 'w': player.y = Math.max(0, player.y - player.speed); break;
+                case 's': player.y = Math.min(450, player.y + player.speed); break;
+                case 'a': player.x = Math.max(0, player.x - player.speed); break;
+                case 'd': player.x = Math.min(700, player.x + player.speed); break;
+                case ' ': activateVoidShield(); break;
+            }
+            player.element.style.left = player.x + 'px';
+            player.element.style.top = player.y + 'px';
+        });
+
+        const styleSheet = document.createElement("style");
+        styleSheet.textContent = `
+    .enemy::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: var(--health, 100%);
+        height: 5px;
+        background: red;
+        transition: width 0.3s;
+    }
+    `;
+        document.head.appendChild(styleSheet);
+
+        updateGame();
+    </script>
+</body>
+
+</html>

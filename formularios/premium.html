@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/icon.png">
+
+    <title>Neko Stream</title>
+
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="background-color: #000000;">
+
+    <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+            <a href="../index.html" class="navbar-brand d-flex align-items-center">
+                <img src="img/icon.png" alt="" width="10%" height="10%">
+                <strong>Neko Stream</strong>
+            </a>
+            <a href="../index.html" class="btn btn-outline-light">Volta ao menu</a>
+        </div>
+    </div>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4" style="color: orange;">Premium's</h1>
+        <p class="lead" style="color: white;">Assista agora a animes de todos os gêneros e aproveite uma experiência aprimorada!</p>
+    </div>
+
+    <div class="container">
+        <div class="card-deck mb-3 text-center">
+            <!-- Card Anual -->
+            <div class="card mb-4 box-shadow" style="background-color: #343b50;">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal" style="color: orange;">Gratis</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title" style="color: #ffffff;">Gratis</h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li style="color: #ffffff;">Acesso Limitado a Conteúdo</li>
+                        <li style="color: #ffffff;">limite de 480p</li>
+                        <li style="color: #ffffff;">Anúncios</li>
+                        <li style="color: #ffffff;">Sem Download</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Card Premium -->
+            <div class="card mb-4 box-shadow" style="background-color: #343b50;">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal" style="color: orange;">Premium</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title" style="color: #ffffff;">R$19,99 <small class="text-muted">/ mês</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li style="color: #ffffff;">Animes Ilimitados</li>
+                        <li style="color: #ffffff;">Download</li>
+                        <li style="color: #ffffff;">Sem Anúncios</li>
+                    </ul>
+                    <!-- Botão para abrir o modal -->
+                    <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#paymentModal">Assinar</button>
+                </div>
+            </div>
+            <!-- Card Premium Plus -->
+            <div class="card mb-4 box-shadow" style="background-color: #343b50;">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal" style="color: orange;">Premium Plus</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title" style="color: #ffffff;">R$39,99 <small class="text-muted">/ mês</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li style="color: #ffffff;"></li>
+                        <li style="color: #ffffff;">Todas as Vantagens do Pacote Premium:</li>
+                        <li style="color: #ffffff;">Múltiplas Telas</li>
+                        <li style="color: #ffffff;">Qualidade de Vídeo Avançada</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">Assinar</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <img class="mb-2" src="img/icon.png" alt="" width="24" height="24">
+                    <small class="d-block mb-3 text-muted">&copy; 2024</small>
+                </div>
+                <div class="col-12 text-center">
+                    <ul class="list-unstyled d-inline-flex">
+                        <li class="mr-3">
+                            <span>&bull;</span>
+                            <a class="text-muted" href="#" data-toggle="modal" data-target="#privacyPolicyModal">Políticas de Privacidade</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+            <!-- Modal de pagamento -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Pagamento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="paymentForm">
+                        <div class="form-group">
+                            <label for="cardNumber">Número do Cartão</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="Digite o número do seu cartão">
+                        </div>
+                        <div class="form-group">
+                            <label for="cardName">Nome no Cartão</label>
+                            <input type="text" class="form-control" id="cardName" placeholder="Nome como aparece no cartão">
+                        </div>
+                        <div class="form-group">
+                            <label for="expirationDate">Data de Expiração</label>
+                            <input type="text" class="form-control" id="expirationDate" placeholder="MM/AA">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" class="form-control" id="cvv" placeholder="Código de Segurança">
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentMethod">Método de Pagamento</label>
+                            <select class="form-control" id="paymentMethod">
+                                <option>Cartão de Crédito</option>
+                                <option>Cartão de Débito</option>
+                                <option>PayPal</option>
+                                <option>Pix</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Pagar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Política de Privacidade -->
+    <div class="modal fade" id="privacyPolicyModal" tabindex="-1" role="dialog" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyPolicyModalLabel">Política de Privacidade</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6>Informações Coletadas</h6>
+                    <p>Coletamos informações pessoais e de uso, como nome, e-mail e dados de acesso.</p>
+                    
+                    <h6>Uso das Informações</h6>
+                    <p>Usamos suas informações para melhorar nossos serviços e enviar atualizações.</p>
+                    
+                    <h6>Compartilhamento</h6>
+                    <p>Não vendemos suas informações, mas podemos compartilhar com prestadores de serviços.</p>
+                    
+                    <h6>Segurança</h6>
+                    <p>Protetemos suas informações, mas não garantimos segurança absoluta.</p>
+                    
+                    <h6>Seus Direitos</h6>
+                    <p>Você pode acessar, corrigir ou excluir suas informações pessoais.</p>
+                    
+                    <h6>Cookies</h6>
+                    <p>Utilizamos cookies para melhorar a experiência do usuário.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para redirecionar após o clique no botão "Pagar"
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio real do formulário
+            window.location.href = '../index.html'; // Redireciona para a página index.html
+        });
+    </script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+  <title>Notícias da Neko</title>
+  <style>
+    :root {
+      --primary-orange: #FF6B00;
+      --dark-bg: #1a1a1a;
+      --light-text: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--dark-bg);
+      color: var(--light-text);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background-color: #000000;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .news-card {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .news-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .news-content {
+      padding: 1rem;
+    }
+
+    .news-title {
+      color: var(--primary-orange);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .news-description {
+      color: #cccccc;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .news-date {
+      color: #888888;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .section-title {
+      color: var(--primary-orange);
+      font-size: 1.5rem;
+      margin: 2rem 0 1rem 0;
+      border-bottom: 2px solid var(--primary-orange);
+      padding-bottom: 0.5rem;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-input {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 20px;
+      background-color: #2a2a2a;
+      color: var(--light-text);
+      margin-right: 1rem;
+      width: 200px;
+    }
+
+    .search-input:focus {
+      outline: 2px solid var(--primary-orange);
+    }
+
+    .quiz-section {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .quiz-card {
+      background-color: #333;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .quiz-card:hover {
+      transform: scale(1.03);
+      background-color: #444;
+    }
+
+    .quiz-icon {
+      font-size: 2rem;
+      color: var(--primary-orange);
+      margin-bottom: 1rem;
+    }
+
+    .quiz-title {
+      color: var(--primary-orange);
+      margin-bottom: 0.5rem;
+    }
+
+    .quiz-description {
+      color: #cccccc;
+      font-size: 0.9rem;
+    }
+
+    .quiz-button {
+      background-color: var(--primary-orange);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .quiz-button:hover {
+      background-color: #ff8533;
+    }
+
+    .featured-news {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .featured-news .news-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-height: 300px;
+    }
+
+    .featured-news .news-image {
+      height: 300px;
+    }
+
+    .featured-news .news-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-news .news-title {
+      font-size: 1.5rem;
+    }
+
+    .featured-news .news-description {
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<header>
+  <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+          <a href="../index.html" class="navbar-brand d-flex align-items-center">
+              <img src="img/icon.png" alt="Neko Stream" width="50" height="50">
+              <strong>Neko Stream</strong>
+          </a>
+          <div>
+              <a href="formularios/login.html" class="btn btn-outline-light">Entra na Conta</a>
+              <a href="formularios/singin.html" class="btn btn-outline-light">Criar Conta</a>
+          </div>
+      </div>
+  </div>
+</header>
+
+  <main class="container">
+    <h2 class="section-title">Principais Notícias</h2>
+    <div class="featured-news">
+      <article class="news-card">
+        <img class="news-image" alt="Upcoming anime series promotional image showing dynamic fight scene"
+          src="/a/e1ef0507-c73a-489f-b3a7-a1efa4170b0e">
+        <div class="news-content">
+          <h3 class="news-title">BLUE LOCK Season 2 Announcement</h3>
+          <p class="news-description">The hit sports anime returns with an exciting new season! Get ready for more
+            intense matches and character development.</p>
+          <p class="news-date">November 14, 2023</p>
+        </div>
+      </article>
+      <article class="news-card">
+        <img class="news-image" alt="Dramatic scene from Demon Slayer anime"
+          src="/a/533782a9-08ad-4527-a7d0-3c7d1aebdbea">
+        <div class="news-content">
+          <h3 class="news-title">Demon Slayer Season 4 Preview</h3>
+          <p class="news-description">First look at the upcoming season reveals new characters and stunning animation
+            sequences.</p>
+          <p class="news-date">November 11, 2023</p>
+        </div>
+      </article>
+    </div>
+
+    <h2 class="section-title">Latest News</h2>
+    <div class="news-grid">
+      <article class="news-card">
+        <img class="news-image" alt="Fantasy RPG game characters in dramatic battle pose"
+          src="/a/1ea2ec94-4abf-4225-8536-48e64f9ba234">
+        <div class="news-content">
+          <h3 class="news-title">OVERLORD RPG Global Launch</h3>
+          <p class="news-description">The highly anticipated OVERLORD game launches worldwide with exclusive content for
+            early players.</p>
+          <p class="news-date">November 13, 2023</p>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img class="news-image" alt="Bright colored anime character in action pose"
+          src="/a/75bec7e5-4eb8-49f2-b11a-5ac969fd283b">
+        <div class="news-content">
+          <h3 class="news-title">Dragon Ball DAIMA Updates</h3>
+          <p class="news-description">New information revealed about the upcoming Dragon Ball series, including
+            character designs and plot details.</p>
+          <p class="news-date">November 12, 2023</p>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img class="news-image" alt="Behind the scenes anime production shot"
+          src="/a/c0a37642-0c29-4b38-b17e-dc08198263d1">
+        <div class="news-content">
+          <h3 class="news-title">Studio Ghibli Documentary</h3>
+          <p class="news-description">Exclusive behind-the-scenes look at the legendary animation studio's creative
+            process.</p>
+          <p class="news-date">November 10, 2023</p>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <img class="news-image" alt="Anime convention crowd scene" src="/a/3ff2a79d-d10d-4705-85c8-01217ba33c56">
+        <div class="news-content">
+          <h3 class="news-title">AnimeExpo 2024 Dates</h3>
+          <p class="news-description">Major anime convention announces dates and first wave of special guests for next
+            year.</p>
+          <p class="news-date">November 9, 2023</p>
+        </div>
+      </article>
+    </div>
+
+    <h2 class="section-title">Anime Quizzes</h2>
+    <div class="quiz-section">
+      <div class="quiz-grid">
+        <div class="quiz-card">
+          <div class="quiz-icon">🎭</div>
+          <h3 class="quiz-title">Character Quiz</h3>
+          <p class="quiz-description">Test your knowledge of famous anime characters!</p>
+          <button class="quiz-button">Start Quiz</button>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-icon">📺</div>
+          <h3 class="quiz-title">Series Trivia</h3>
+          <p class="quiz-description">How well do you know your favorite anime series?</p>
+          <button class="quiz-button">Start Quiz</button>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-icon">🎬</div>
+          <h3 class="quiz-title">Studio Challenge</h3>
+          <p class="quiz-description">Identify anime studios by their signature styles!</p>
+          <button class="quiz-button">Start Quiz</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.loading = 'lazy';
+      });
+    });
+  </script>
+</body>
+
+</html>

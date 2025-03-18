@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Neko Stream - O melhor streaming de animes do Brasil">
+    <meta name="author" content="MESTRE">
+    <link rel="icon" href="../img/icon.png">
+
+    <title>JoJo's Bizarre Battle</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+   
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #000;
+            font-family: "Press Start 2P", system-ui;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-title {
+            color: #FFD700;
+            text-align: center;
+            text-shadow: 3px 3px #800000;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            animation: titlePulse 2s infinite;
+        }
+
+        @keyframes titlePulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .game-area {
+            width: 800px;
+            height: 400px;
+            position: relative;
+            border: 4px solid #FFD700;
+            background: linear-gradient(#2C0A37, #0A0A2C);
+            overflow: hidden;
+        }
+
+        .health-bars {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            z-index: 10;
+        }
+
+        .health-bar {
+            width: 300px;
+            height: 30px;
+            background: #333;
+            border: 2px solid #FFD700;
+        }
+
+        .health-fill {
+            width: 100%;
+            height: 100%;
+            background: #00FF00;
+            transition: width 0.3s;
+        }
+
+        .character {
+            position: absolute;
+            bottom: 20px;
+            width: 150px;
+            height: 200px;
+            transition: transform 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .character img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        #jotaro {
+            left: 100px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #dio {
+            right: 100px;
+            transform: scaleX(-1);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .character.attacking {
+            animation: attack 0.5s;
+        }
+
+        @keyframes attack {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(50px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        #dio.attacking {
+            animation: attackReverse 0.5s;
+        }
+
+        @keyframes attackReverse {
+            0% {
+                transform: scaleX(-1) translateX(0);
+            }
+
+            50% {
+                transform: scaleX(-1) translateX(-50px);
+            }
+
+            100% {
+                transform: scaleX(-1) translateX(0);
+            }
+        }
+
+        .stand {
+            position: absolute;
+            opacity: 0;
+            width: 200px;
+            height: 200px;
+            transition: opacity 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stand img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .stand.active {
+            opacity: 0.7;
+            animation: standAttack 1s;
+        }
+
+        @keyframes standAttack {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-family: inherit;
+            background: #FFD700;
+            border: none;
+            color: #000;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+
+    .jotaro {
+        background-color: #800080; /* Cor roxa */
+        color: #000000;
+    }
+
+    .jotaro:hover {
+        background-color: #9932CC; /* Tom mais claro de roxo ao passar o mouse */
+    }
+    </style>
+</head>
+
+<body>
+
+    <a style="color: purple;" href="telasdejogos.html" class="back-button">Voltar ao Menu</a>
+
+    <h1 class="game-title">JoJo's Bizarre Battle</h1>
+
+    <div class="game-area">
+        <div class="health-bars">
+            <div class="health-bar">
+                <div id="jotaro-health" class="health-fill"></div>
+            </div>
+            <div class="health-bar">
+                <div id="dio-health" class="health-fill"></div>
+            </div>
+        </div>
+
+        <div id="jotaro" class="character">
+            <img alt="Jotaro character sprite in fighting stance" src="img/JoJo's Bizarre Battle/jotaro.png">
+            <div class="stand" id="star-platinum">
+                <img alt="Star Platinum stand sprite" src="img/JoJo's Bizarre Battle/star-platinum.png">
+            </div>
+        </div>
+
+        <div id="dio" class="character">
+            <img alt="Dio character sprite in fighting stance" src="img/JoJo's Bizarre Battle/dio.png">
+            <div class="stand" id="the-world">
+                <img alt="The World stand sprite" src="img/JoJo's Bizarre Battle/the-world.png">
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="jotaro" onclick="attack('jotaro')">Jotaro Attack</button>
+        <button class="jotaro" onclick="useStand('jotaro')">Star Platinum</button>
+        <button class="dio" onclick="attack('dio')">Dio Attack</button>
+        <button class="dio" onclick="useStand('dio')">The World</button>
+    </div>
+
+    <script>
+        const characters = {
+            jotaro: {
+                health: 100,
+                element: document.getElementById('jotaro'),
+                healthBar: document.getElementById('jotaro-health'),
+                stand: document.getElementById('star-platinum')
+            },
+            dio: {
+                health: 100,
+                element: document.getElementById('dio'),
+                healthBar: document.getElementById('dio-health'),
+                stand: document.getElementById('the-world')
+            }
+        };
+
+        function attack(character) {
+            const attacker = characters[character];
+            const defender = character === 'jotaro' ? characters.dio : characters.jotaro;
+
+            attacker.element.classList.add('attacking');
+            setTimeout(() => attacker.element.classList.remove('attacking'), 500);
+
+            const damage = Math.floor(Math.random() * 10) + 5;
+            defender.health = Math.max(0, defender.health - damage);
+            defender.healthBar.style.width = defender.health + '%';
+
+            checkGameOver();
+        }
+
+        function useStand(character) {
+            const player = characters[character];
+            const opponent = character === 'jotaro' ? characters.dio : characters.jotaro;
+
+            player.stand.classList.add('active');
+            setTimeout(() => player.stand.classList.remove('active'), 1000);
+
+            const damage = Math.floor(Math.random() * 20) + 10;
+            opponent.health = Math.max(0, opponent.health - damage);
+            opponent.healthBar.style.width = opponent.health + '%';
+
+            checkGameOver();
+        }
+
+        function checkGameOver() {
+            if (characters.jotaro.health <= 0) {
+                alert('Dio Wins! ZA WARUDO!');
+                resetGame();
+            } else if (characters.dio.health <= 0) {
+                alert('Jotaro Wins! ORA ORA ORA!');
+                resetGame();
+            }
+        }
+
+        function resetGame() {
+            characters.jotaro.health = 100;
+            characters.dio.health = 100;
+            characters.jotaro.healthBar.style.width = '100%';
+            characters.dio.healthBar.style.width = '100%';
+        }
+
+        resetGame();
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streaming One Piece</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/animes.css">
+  <link rel="icon" href="img/icon.png">
+
+  <style>
+    /* O conteúdo extra é oculto quando a página é carregada */
+    #moreContent {
+      display: none;
+    }
+
+    .link-estilo {
+      color: orange;
+      text-decoration: none;
+      /* remove sublinhado */
+    }
+
+    .link-estilo:hover {
+      cursor: pointer;
+      /* faz aparecer a mãozinha */
+      text-decoration: underline;
+      /* opcional: adiciona sublinhado quando o mouse estiver sobre o link */
+    }
+
+    /* O conteúdo extra é oculto quando a página é carregada */
+    #moreContent {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Add some information about the album below, the author, or any other background
+              context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off
+              to some social networking sites or contact information.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="../index.html" class="navbar-brand d-flex align-items-center">
+          <img src="img/icon.png" alt="" width="10%" height="10%">
+          <strong>Neko Stream</strong>
+        </a>
+        <a href="../index.html" class="btn btn-outline-light">Volta ao menu</a>
+      </div>
+    </div>
+  </header>
+
+  <header class="bg-dark text-white p-3 text-center">
+    <h1>Streaming - One Piece</h1>
+  </header>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="video-container">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/VP8QfLfuE7g"
+              title="Bleach Streaming" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Descrição sobre One Piece -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="text-start">
+          One Piece | 8.72★
+          <img src="img/16.png" style="height: 1em; width: 1em; vertical-align: middle;">
+          <span style="margin-left: 10px;">
+            <button id="likeButton" class="btn btn-outline-success btn-sm" onclick="addVote(true)">
+              👍 <span id="likeCount">0</span>
+            </button>
+            <button id="dislikeButton" class="btn btn-outline-danger btn-sm" onclick="addVote(false)">
+              👎 <span id="dislikeCount">0</span>
+            </button>
+          </span>
+        </h2>
+
+        <p>One Piece é uma série de anime e mangá criada por Eiichiro Oda, que começou a ser publicada na Weekly Shōnen
+          Jump em 1997 e rapidamente se tornou uma das franquias mais icônicas e de maior sucesso na história dos
+          quadrinhos e animação. A história segue Monkey D. Luffy, um jovem pirata que sonha em se tornar o Rei dos
+          Piratas, encontrando o lendário tesouro conhecido como "One Piece" e se tornando o homem mais livre do mundo.
+        </p>
+        <div id="moreContent">
+          <p>Luffy, que possui o poder de esticar seu corpo como borracha devido à ingestão da "Fruta do Diabo" chamada
+            Gomu Gomu no Mi, embarca em uma jornada pelos mares em busca de seus sonhos. Ao longo do caminho, ele forma
+            a tripulação dos "Straw Hat Pirates" (Piratas do Chapéu de Palha), composta por uma diversidade de
+            personagens únicos, incluindo o espadachim Roronoa Zoro, a navegadora Nami, o atirador Usopp e o cozinheiro
+            Sanji, cada um com suas próprias ambições e histórias de fundo.</p>
+          <p>One Piece é conhecido por sua narrativa rica e expansiva, que combina aventura, humor, emoção e temas
+            profundos, como amizade, liberdade e a luta contra a opressão. O mundo vasto e detalhado de One Piece é
+            repleto de ilhas exóticas, culturas diversificadas e uma variedade de poderes sobrenaturais, proporcionados
+            pelas Frutas do Diabo, que conferem habilidades únicas aos personagens.</p>
+          <p>A série é elogiada por seu desenvolvimento de personagens, enredos intrincados e reviravoltas emocionantes.
+            Ao longo das décadas, One Piece conquistou uma base de fãs global e quebrou inúmeros recordes de vendas,
+            consolidando-se como um dos mangás mais vendidos de todos os tempos.</p>
+          <p>Além disso, a adaptação para anime, que começou em 1999, trouxe a série a uma audiência ainda maior, com
+            sequências de ação vibrantes e uma trilha sonora memorável. Com sua combinação de aventura épica, humor e
+            mensagens inspiradoras, One Piece se tornou uma parte fundamental da cultura pop, influenciando não apenas
+            outras obras de anime e mangá, mas também gerando uma imensa comunidade de fãs dedicados ao redor do mundo.
+            A série continua a ser uma força criativa em andamento, com novas histórias e arcos sendo desenvolvidos,
+            mantendo seu legado vivo e vibrante.</p>
+        </div>
+        <a onclick="showMore()" class="link-estilo">Mostrar mais</a>
+      </div>
+      <div class="col-md-4">
+        <h5 style="text-align: center;">Veja também</h5>
+
+        <div class="video-container">
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Iszdc1lqqnQ"
+              title="Bleach Streaming" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="divider-container">
+    <canvas id="divider" width="800" height="4"></canvas>
+  </div>
+
+  <div class="comments-section">
+    <h2>Comentários</h2>
+    <div class="new-comment">
+      <input type="text" id="commentAuthor" placeholder="Seu nome">
+      <textarea id="commentText" placeholder="Escreva seu comentário..."></textarea>
+      <button onclick="addComment()">Enviar Comentário</button>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">O-kikuTheSwordswoman</div>
+          <div class="comment-date">10 horas atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        A O-kiku é uma das melhores personagens de One Piece! Sua habilidade com a espada é incrível, e a forma como ela se mantém firme na luta pela justiça é admirável. Além disso, o jeito que ela cuida de sua família e amigos mostra seu coração gentil. Adoro como ela traz força e graça para a história!
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">AkumaNoMi</div>
+          <div class="comment-date">3 horas atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        O sistema das Akuma no Mi é tão criativo! Cada fruta traz uma habilidade única, e as possibilidades são infinitas. É sempre emocionante ver novas frutas e como os personagens as utilizam!
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">ChopperDoctor</div>
+          <div class="comment-date">9 dia atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        O Chopper é tão fofo! Ele traz leveza ao anime com suas travessuras, mas também é um médico incrível. A evolução dele como personagem é tocante!
+      </div>
+    </div>
+  </div>
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>© 2024 Streaming One Piece - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function drawDivider() {
+      const canvas = document.getElementById('divider');
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+
+      const gradient = ctx.createLinearGradient(0, 0, width, 0);
+      gradient.addColorStop(0, 'rgba(241, 196, 15, 0)');
+      gradient.addColorStop(0.5, 'rgba(241, 196, 15, 1)');
+      gradient.addColorStop(1, 'rgba(241, 196, 15, 0)');
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, 4);
+    }
+
+    function addComment() {
+      const author = document.getElementById('commentAuthor').value;
+      const text = document.getElementById('commentText').value;
+
+      if (!author || !text) {
+        alert('Por favor, preencha todos os campos!');
+        return;
+      }
+
+      const commentsSection = document.querySelector('.comments-section');
+      const newCommentDiv = document.createElement('div');
+      newCommentDiv.className = 'comment';
+      newCommentDiv.innerHTML = `
+        <div class="comment-header">
+            <div class="comment-avatar"></div>
+            <div class="comment-info">
+                <div class="comment-author">${author}</div>
+                <div class="comment-date">Agora mesmo</div>
+            </div>
+        </div>
+        <div class="comment-content">${text}</div>
+    `;
+
+      const firstComment = document.querySelector('.comment');
+      commentsSection.insertBefore(newCommentDiv, firstComment);
+
+      document.getElementById('commentAuthor').value = '';
+      document.getElementById('commentText').value = '';
+    }
+
+    drawDivider();
+
+    window.addEventListener('resize', function () {
+      const canvas = document.getElementById('divider');
+      canvas.width = Math.min(800, window.innerWidth - 40);
+      drawDivider();
+    });
+
+    window.dispatchEvent(new Event('resize'));
+
+    function showMore() {
+      var moreContent = document.getElementById("moreContent");
+      var link = document.querySelector(".link-estilo");
+
+      if (moreContent.style.display === "none") {
+        moreContent.style.display = "block";
+        link.textContent = "Mostrar menos";
+      } else {
+        moreContent.style.display = "none";
+        link.textContent = "Mostrar mais";
+      }
+    }
+
+    const totalViews = 1388203;
+    let likeCount;
+    let dislikeCount;
+
+    function initializeCounts() {
+      likeCount = Math.floor(totalViews * (0.75 + Math.random() * 0.1));
+      dislikeCount = totalViews - likeCount;
+
+      document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+      document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+    }
+
+    function addVote(isLike) {
+      if (isLike) {
+        likeCount++;
+        document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+      } else {
+        dislikeCount++;
+        document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+      }
+    }
+
+    window.onload = initializeCounts;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

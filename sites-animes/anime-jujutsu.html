@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streaming Jujutsu Kaisen</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/animes.css">
+  <link rel="icon" href="img/icon.png">
+
+  <style>
+    /* O conteúdo extra é oculto quando a página é carregada */
+    #moreContent {
+      display: none;
+    }
+
+    .link-estilo {
+      color: orange;
+      text-decoration: none;
+      /* remove sublinhado */
+    }
+
+    .link-estilo:hover {
+      cursor: pointer;
+      /* faz aparecer a mãozinha */
+      text-decoration: underline;
+      /* opcional: adiciona sublinhado quando o mouse estiver sobre o link */
+    }
+
+    /* O conteúdo extra é oculto quando a página é carregada */
+    #moreContent {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Add some information about the album below, the author, or any other background
+              context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off
+              to some social networking sites or contact information.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="../index.html" class="navbar-brand d-flex align-items-center">
+          <img src="img/icon.png" alt="" width="10%" height="10%">
+          <strong>Neko Stream</strong>
+        </a>
+        <a href="../index.html" class="btn btn-outline-light">Volta ao menu</a>
+      </div>
+    </div>
+  </header>
+
+  <header class="bg-dark text-white p-3 text-center">
+    <h1>Streaming - Jujutsu Kaisen</h1>
+  </header>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="video-container">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ynr6gnyu9NE"
+              title="Bleach Streaming" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Descrição sobre Jujutsu Kaisen -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="text-start">
+          Jujutsu Kaisen | 8.58★
+          <img src="img/16.png" style="height: 1em; width: 1em; vertical-align: middle;">
+          <span style="margin-left: 10px;">
+            <button id="likeButton" class="btn btn-outline-success btn-sm" onclick="addVote(true)">
+              👍 <span id="likeCount">0</span>
+            </button>
+            <button id="dislikeButton" class="btn btn-outline-danger btn-sm" onclick="addVote(false)">
+              👎 <span id="dislikeCount">0</span>
+            </button>
+          </span>
+        </h2>
+
+        <p>Jujutsu Kaisen é uma série de anime e mangá criada por Gege Akutami, que começou a ser publicada na Weekly
+          Shōnen Jump em 2018. A história gira em torno de Yuji Itadori, um estudante do ensino médio que se envolve com
+          o mundo das maldições após ingerir um objeto amaldiçoado, o dedo de Ryomen Sukuna, um dos espíritos malignos
+          mais poderosos. Ao consumir o dedo, Yuji se torna o receptáculo de Sukuna, mas também ganha habilidades
+          sobrenaturais que o permitem lutar contra outras maldições.</p>
+        <div id="moreContent">
+          <p>Determinado a proteger as pessoas e usar suas novas habilidades para o bem, Yuji se junta à Jujutsu High
+            School, uma escola especializada em treinar jujutsu sorcerers, aqueles que combatem maldições. Sob a
+            orientação de seus professores, Satoru Gojo e Kiyotaka Ijichi, e ao lado de colegas como Megumi Fushiguro e
+            Nobara Kugisaki, Yuji embarca em uma jornada de autodescoberta enquanto enfrenta várias maldições e outros
+            sorcerers com suas próprias agendas.</p>
+          <p>Jujutsu Kaisen é notável por sua mistura de ação intensa, horror e comédia, além de suas batalhas criativas
+            e bem elaboradas. Os personagens são profundos e complexos, cada um com suas próprias motivações e passados,
+            que enriquecem a narrativa. A série também explora temas como amizade, sacrifício e a luta contra o destino.
+          </p>
+          <p>A animação da série, produzida pelo estúdio MAPPA, recebeu aclamação pela sua qualidade visual
+            impressionante, especialmente nas sequências de luta, que combinam estilos de combate fluidos e efeitos
+            visuais impactantes. Jujutsu Kaisen rapidamente conquistou uma enorme base de fãs e se tornou um dos animes
+            mais populares da sua época, com o primeiro arco do mangá sendo adaptado para uma série de anime
+            bem-sucedida, seguida por um filme que serve como uma prequela, Jujutsu Kaisen 0.</p>
+          <p>Com seu enredo envolvente e personagens memoráveis, Jujutsu Kaisen solidificou seu lugar como um dos
+            principais representantes do gênero shōnen, influenciando e inspirando novas gerações de fãs e criadores.
+          </p>
+        </div>
+        <a onclick="showMore()" class="link-estilo">Mostrar mais</a>
+      </div>
+      <div class="col-md-4">
+        <h5 style="text-align: center;">Veja também</h5>
+
+        <div class="video-container">
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9sLu3bUBuOg"
+              title="Bleach Streaming" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="divider-container">
+    <canvas id="divider" width="800" height="4"></canvas>
+  </div>
+
+  <div class="comments-section">
+    <h2>Comentários</h2>
+    <div class="new-comment">
+      <input type="text" id="commentAuthor" placeholder="Seu nome">
+      <textarea id="commentText" placeholder="Escreva seu comentário..."></textarea>
+      <button onclick="addComment()">Enviar Comentário</button>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">StarryKirara</div>
+          <div class="comment-date">3 horas atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        Kirara é fascinante! A habilidade dela de manipular as estrelas e a aura misteriosa realmente a destacam. Ela é única no universo de Jujutsu Kaisen!
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">JackpotHakari</div>
+          <div class="comment-date">11 horas atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        Hakari é uma força da natureza! Sua técnica de Probabilidade e a habilidade de causar tanto dano em um só golpe são insanas. Ele definitivamente sabe como roubar a cena!
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">iuka_estranho</div>
+          <div class="comment-date">20 dia atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        mesmo que n e meu personagem favorito o todo n para de ser o melhor personagem de jujutsu kaisen por ele ter um carisma e ser o mais humano de la e por ter um poder dinâmico e legal
+      </div>
+    </div>
+  </div>
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>© 2024 Streaming Jujutsu Kaisen - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function drawDivider() {
+      const canvas = document.getElementById('divider');
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+
+      const gradient = ctx.createLinearGradient(0, 0, width, 0);
+      gradient.addColorStop(0, 'rgba(241, 196, 15, 0)');
+      gradient.addColorStop(0.5, 'rgba(241, 196, 15, 1)');
+      gradient.addColorStop(1, 'rgba(241, 196, 15, 0)');
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, 4);
+    }
+
+    function addComment() {
+      const author = document.getElementById('commentAuthor').value;
+      const text = document.getElementById('commentText').value;
+
+      if (!author || !text) {
+        alert('Por favor, preencha todos os campos!');
+        return;
+      }
+
+      const commentsSection = document.querySelector('.comments-section');
+      const newCommentDiv = document.createElement('div');
+      newCommentDiv.className = 'comment';
+      newCommentDiv.innerHTML = `
+        <div class="comment-header">
+            <div class="comment-avatar"></div>
+            <div class="comment-info">
+                <div class="comment-author">${author}</div>
+                <div class="comment-date">Agora mesmo</div>
+            </div>
+        </div>
+        <div class="comment-content">${text}</div>
+    `;
+
+      const firstComment = document.querySelector('.comment');
+      commentsSection.insertBefore(newCommentDiv, firstComment);
+
+      document.getElementById('commentAuthor').value = '';
+      document.getElementById('commentText').value = '';
+    }
+
+    drawDivider();
+
+    window.addEventListener('resize', function () {
+      const canvas = document.getElementById('divider');
+      canvas.width = Math.min(800, window.innerWidth - 40);
+      drawDivider();
+    });
+
+    window.dispatchEvent(new Event('resize'));
+
+    function showMore() {
+      var moreContent = document.getElementById("moreContent");
+      var link = document.querySelector(".link-estilo");
+
+      if (moreContent.style.display === "none") {
+        moreContent.style.display = "block";
+        link.textContent = "Mostrar menos";
+      } else {
+        moreContent.style.display = "none";
+        link.textContent = "Mostrar mais";
+      }
+    }
+
+    const totalViews = 1759393;
+    let likeCount;
+    let dislikeCount;
+
+    function initializeCounts() {
+      likeCount = Math.floor(totalViews * (0.75 + Math.random() * 0.1));
+      dislikeCount = totalViews - likeCount;
+
+      document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+      document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+    }
+
+    function addVote(isLike) {
+      if (isLike) {
+        likeCount++;
+        document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+      } else {
+        dislikeCount++;
+        document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+      }
+    }
+
+    window.onload = initializeCounts;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

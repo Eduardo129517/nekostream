@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/icon.png">
+    <title>Neko Stream</title>
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco */
+        }
+        .form-control {
+            background-color: #333; /* Fundo escuro para os campos */
+            color: #fff; /* Texto branco nos campos */
+        }
+        .btn-warning {
+            background-color: #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+            <a href="../index.html" class="navbar-brand d-flex align-items-center">
+                <img src="../img/icon.png" alt="" width="10%" height="10%">
+                <strong>Neko Stream</strong>
+            </a>
+            <div>
+                <a href="../index.html" class="btn btn-outline-light">Volta ao menu</a>
+                <a href="login.html" class="btn btn-outline-light">Entrar na conta</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main role="main" class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center" style="color: orange;">Criar Conta</h2>
+            <form id="createAccountForm">
+                <div class="form-group">
+                    <label for="username">Nome de Usuário</label>
+                    <input type="text" class="form-control" id="username" placeholder="Digite seu nome de usuário" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Digite seu email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" class="form-control" id="password" placeholder="Digite sua senha" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirme a Senha</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirme sua senha" required>
+                </div>
+                <button type="submit" class="btn btn-warning btn-block">Criar Conta</button>
+            </form>
+            <div class="text-center mt-3">
+                <small>Já tem uma conta? <a href="login.html" class="text-light">Faça login</a></small>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://getbootstrap.com/docs/4.0/assets/js/vendor/popper.min.js"></script>
+<script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+
+<script>
+    document.getElementById('createAccountForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita o envio do formulário
+
+        // Exibe a mensagem de sucesso
+        alert('Sua conta foi criada com sucesso!');
+
+        // Redireciona para a página principal após 2 segundos
+        setTimeout(function() {
+            window.location.href = 'login.html'; // Altere para o caminho da sua página principal
+        }, 500);
+    });
+</script>
+
+</body>
+</html>

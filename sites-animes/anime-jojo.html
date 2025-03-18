@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streaming JoJo's</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/animes.css">
+  <link rel="icon" href="img/icon.png">
+
+  <style>
+    /* O conteúdo extra é oculto quando a página é carregada */
+    #moreContent {
+      display: none;
+    }
+
+    .link-estilo {
+      color: orange;
+      text-decoration: none;
+      /* remove sublinhado */
+    }
+
+    .link-estilo:hover {
+      cursor: pointer;
+      /* faz aparecer a mãozinha */
+      text-decoration: underline;
+      /* opcional: adiciona sublinhado quando o mouse estiver sobre o link */
+    }
+
+    /* O conteúdo extra é oculto quando a página é carregada */
+    #moreContent {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Add some information about the album below, the author, or any other background
+              context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off
+              to some social networking sites or contact information.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="../index.html" class="navbar-brand d-flex align-items-center">
+          <img src="img/icon.png" alt="" width="10%" height="10%">
+          <strong>Neko Stream</strong>
+        </a>
+        <a href="../index.html" class="btn btn-outline-light">Volta ao menu</a>
+      </div>
+    </div>
+  </header>
+
+  <header class="bg-dark text-white p-3 text-center">
+    <h1>Streaming - JoJo's Bizarre Adventure</h1>
+  </header>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="video-container">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zmNxNnuILjY"
+              title="Bleach Streaming" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Descrição sobre JoJo's Bizarre Adventure -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="text-start">
+          JoJo's Bizarre Adventure | 7.88★
+          <img src="img/16.png" style="height: 1em; width: 1em; vertical-align: middle;">
+          <span style="margin-left: 10px;">
+            <button id="likeButton" class="btn btn-outline-success btn-sm" onclick="addVote(true)">
+              👍 <span id="likeCount">0</span>
+            </button>
+            <button id="dislikeButton" class="btn btn-outline-danger btn-sm" onclick="addVote(false)">
+              👎 <span id="dislikeCount">0</span>
+            </button>
+          </span>
+        </h2>
+
+        <p>JoJo's Bizarre Adventure é uma série de anime e mangá criada por Hirohiko Araki, que começou a ser publicada
+          na Weekly Shōnen Jump em 1987 e continua a ser uma das franquias mais influentes do gênero. A narrativa é
+          dividida em várias partes, cada uma seguindo um membro diferente da família Joestar, cada um com seu próprio
+          estilo, história e aventuras únicas. A série é conhecida por seu estilo artístico distinto, personagens
+          extravagantes e uma mistura de ação, aventura, horror e comédia.</p>
+        <div id="moreContent">
+          <p>A primeira parte, Phantom Blood, apresenta Jonathan Joestar, um jovem nobre britânico que enfrenta seu
+            rival Dio Brando, que se torna um vampiro. Ao longo das partes subsequentes, a história evolui, apresentando
+            novas gerações de Joestars e inimigos. Uma das características marcantes da série é a introdução dos
+            "Stands" na terceira parte, Stardust Crusaders, que são manifestações de poder espiritual que conferem
+            habilidades únicas a seus usuários. Isso adiciona uma nova dimensão às batalhas, permitindo estratégias
+            complexas e criativas.</p>
+          <p>A série também é famosa por suas referências à cultura pop, moda e música, com muitos personagens e stands
+            sendo inspirados por bandas e canções. Os arcos narrativos variam de temas de luta contra o mal a jornadas
+            de autodescoberta, explorando as complexidades das relações familiares, amizade e sacrifício.</p>
+          <p>JoJo's Bizarre Adventure é amplamente reconhecida por sua narrativa inovadora, personagens memoráveis e
+            momentos icônicos, que se tornaram parte da cultura pop. O anime, que começou a ser adaptado em 2012, trouxe
+            uma nova geração de fãs, elevando a popularidade da franquia. A série continua a influenciar criadores e
+            artistas em todo o mundo, solidificando seu status como um clássico atemporal no universo dos animes e
+            mangás.</p>
+        </div>
+        <a onclick="showMore()" class="link-estilo">Mostrar mais</a>
+      </div>
+      <div class="col-md-4">
+        <h5 style="text-align: center;">Veja também</h5>
+
+        <div class="video-container">
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3zFxnyKhg9k"
+              title="Bleach Streaming" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="divider-container">
+    <canvas id="divider" width="800" height="4"></canvas>
+  </div>
+
+  <div class="comments-section">
+    <h2>Comentários</h2>
+    <div class="new-comment">
+      <input type="text" id="commentAuthor" placeholder="Seu nome">
+      <textarea id="commentText" placeholder="Escreva seu comentário..."></textarea>
+      <button onclick="addComment()">Enviar Comentário</button>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">DiegoBrando123</div>
+          <div class="comment-date">2 horas atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        Melhor anime de todos os tempos! A parte 5 é simplesmente incrível, mal posso esperar para ver mais!
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">StardustCrusader</div>
+          <div class="comment-date">7 horas atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        A animação está cada vez melhor! Os stands são muito bem desenhados e as lutas são épicas!
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">vivix136</div>
+          <div class="comment-date">4 dia atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        Soft & Wet é um dos Stands mais criativos que já vi em JoJo's Bizarre Adventure! A habilidade de roubar propriedades e criar bolhas que podem absorver tudo é simplesmente genial. A forma como o Josuke utiliza suas habilidades em batalha é impressionante e traz uma nova dimensão às lutas. Adoro como cada Stand em JoJo tem suas próprias características únicas, e Soft & Wet definitivamente se destaca!
+      </div>
+    </div>
+  </div>
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>© 2024 Streaming JoJo's Bizarre Adventure - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function drawDivider() {
+      const canvas = document.getElementById('divider');
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+
+      const gradient = ctx.createLinearGradient(0, 0, width, 0);
+      gradient.addColorStop(0, 'rgba(241, 196, 15, 0)');
+      gradient.addColorStop(0.5, 'rgba(241, 196, 15, 1)');
+      gradient.addColorStop(1, 'rgba(241, 196, 15, 0)');
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, 4);
+    }
+
+    function addComment() {
+      const author = document.getElementById('commentAuthor').value;
+      const text = document.getElementById('commentText').value;
+
+      if (!author || !text) {
+        alert('Por favor, preencha todos os campos!');
+        return;
+      }
+
+      const commentsSection = document.querySelector('.comments-section');
+      const newCommentDiv = document.createElement('div');
+      newCommentDiv.className = 'comment';
+      newCommentDiv.innerHTML = `
+        <div class="comment-header">
+            <div class="comment-avatar"></div>
+            <div class="comment-info">
+                <div class="comment-author">${author}</div>
+                <div class="comment-date">Agora mesmo</div>
+            </div>
+        </div>
+        <div class="comment-content">${text}</div>
+    `;
+
+      const firstComment = document.querySelector('.comment');
+      commentsSection.insertBefore(newCommentDiv, firstComment);
+
+      document.getElementById('commentAuthor').value = '';
+      document.getElementById('commentText').value = '';
+    }
+
+    drawDivider();
+
+    window.addEventListener('resize', function () {
+      const canvas = document.getElementById('divider');
+      canvas.width = Math.min(800, window.innerWidth - 40);
+      drawDivider();
+    });
+
+    window.dispatchEvent(new Event('resize'));
+
+    function showMore() {
+      var moreContent = document.getElementById("moreContent");
+      var link = document.querySelector(".link-estilo");
+
+      if (moreContent.style.display === "none") {
+        moreContent.style.display = "block";
+        link.textContent = "Mostrar menos";
+      } else {
+        moreContent.style.display = "none";
+        link.textContent = "Mostrar mais";
+      }
+    }
+
+    const totalViews = 1104518;
+    let likeCount;
+    let dislikeCount;
+
+    function initializeCounts() {
+      likeCount = Math.floor(totalViews * (0.75 + Math.random() * 0.1));
+      dislikeCount = totalViews - likeCount;
+
+      document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+      document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+    }
+
+    function addVote(isLike) {
+      if (isLike) {
+        likeCount++;
+        document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+      } else {
+        dislikeCount++;
+        document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+      }
+    }
+
+    window.onload = initializeCounts;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

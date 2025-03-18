@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Neko Stream - O melhor streaming de animes do Brasil">
+    <meta name="author" content="MESTRE">
+    <link rel="icon" href="img/icon.png">
+
+    <title>Neko Stream</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+   
+    <link href="album.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="termsModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Termos de Uso do Neko Stream</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="denyTerms()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Bem-vindo ao Neko Stream! Este site é uma demonstração de habilidades de criação de páginas da web, focado em trailers e informações sobre animes. Ao acessar e utilizar o Neko Stream, você concorda com os seguintes termos:</p>
+                <ol>
+                    <li><strong>Uso do Conteúdo</strong><br>
+                        Todo o conteúdo apresentado neste site, incluindo trailers, imagens e descrições, pertence aos respectivos criadores e detentores de direitos autorais. O Neko Stream não reivindica a propriedade de qualquer material protegido por direitos autorais. O uso de imagens e trailers é meramente ilustrativo e educacional.
+                    </li>
+                    <li><strong>Objetivo do Site</strong><br>
+                        O Neko Stream serve exclusivamente para fins demonstrativos e não é um serviço de streaming ou distribuição de conteúdo. Não fornecemos links para assistir a animes, apenas informações sobre eles.
+                    </li>
+                    <li><strong>Isenção de Responsabilidade</strong><br>
+                        O Neko Stream não se responsabiliza por qualquer violação de direitos autorais que possa ocorrer devido à exibição de conteúdo neste site. Recomendamos que os usuários respeitem os direitos dos criadores e procurem plataformas oficiais para assistir aos animes.
+                    </li>
+                    <li><strong>Links Externos</strong><br>
+                        O site pode conter links para outros sites ou serviços. O Neko Stream não é responsável pelo conteúdo desses sites ou por qualquer violação de direitos autorais que possa ocorrer neles.
+                    </li>
+                    <li><strong>Alterações nos Termos</strong><br>
+                        Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. É aconselhável que você revise esta página periodicamente para se manter informado sobre quaisquer mudanças.
+                    </li>
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="acceptTerms()">Aceitar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="denyTerms()">Recusar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <img src="img/icon.png" alt="Neko Stream" width="50" height="50">
+                <strong>Neko Stream</strong>
+            </a>
+            <div>
+                <a href="formularios/login.html" class="btn btn-outline-light">Entra na Conta</a>
+                <a href="formularios/singin.html" class="btn btn-outline-light">Criar Conta</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main role="main">
+    <section class="jumbotron text-center text-white">
+        <div class="container">
+            <h1 class="jumbotron-heading text-warning">O melhor Stream de animes do Brasil</h1>
+            <p>Assista agora a animes de todos os gêneros com a Neko Premium Plus por apenas R$39,99 mensais!</p>
+            <a href="formularios/premium.html" class="btn btn-premium-plus my-2">Premium Plus</a>
+            <a href="formularios/premium.html" class="btn btn-premium my-2">Premium</a>
+        </div>
+    </section>
+
+    <div class="album py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Card de Bleach -->
+                <div class="col-md-4">
+                  <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="" alt="Capa Jujutsu Kaisen">
+                    <button class="play-button" onclick="bleach()">
+                      <div class="play-icon"></div>
+                    </button>
+                    <div class="card-body">
+                      <h3 class="text-white">Bleach</h3>
+                      <p class="card-text text-muted">Ichigo Kurosaki, um adolescente que vê fantasmas, se torna um Shinigami e protege o mundo dos Hollows.</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <small class="text-muted">366 Episódios</small>
+                      </div>
+                    </div>
+                    <script>
+                      function bleach() {
+                        window.open('sites-animes/anime-bleach.html', '_self');
+                      }
+                    </script>
+                  </div>
+                </div>
+    
+
+            <!-- Card de Jujutsu Kaisen -->
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/capas/jujutsukaisen-capa.jpe" alt="Capa Jujutsu Kaisen">
+                <button class="play-button" onclick="jujutsu()">
+                  <div class="play-icon"></div>
+                </button>
+                <div class="card-body">
+                  <h3 class="text-white">Jujutsu Kaisen</h3>
+                  <p class="card-text text-muted">Yuji Itadori herda o poder amaldiçoado de Sukuna e se junta aos feiticeiros de Jujutsu para enfrentar maldições e salvar vidas.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">47 Episódios</small>
+                  </div>
+                </div>
+                <script>
+                  function jujutsu() {
+                    window.open('sites-animes/anime-jujutsu.html', '_self');
+                  }
+                </script>
+              </div>
+            </div>
+
+            <!-- Card de One Piece -->
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/capas/onepiece-capa.jpg" alt="Capa One Piece">
+                <button class="play-button" onclick="onepiece()">
+                  <div class="play-icon"></div>
+                </button>
+                <div class="card-body">
+                  <h3 class="text-white">One Piece</h3>
+                  <p class="card-text text-muted">Luffy, um jovem pirata com poderes, busca o lendário tesouro One Piece para se tornar o Rei dos Piratas com sua tripulação.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">1097 Episódios</small>
+                  </div>
+                </div>
+                <script>
+                  function onepiece() {
+                    window.open('sites-animes/anime-onepiece.html', '_self');
+                  }
+                </script>
+              </div>
+            </div>
+
+            <!-- Card de JoJo's Bizarre Adventure -->
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/capas/JoJo's-capa.jpe" alt="Capa JoJo's">
+                <button class="play-button" onclick="jojo()">
+                  <div class="play-icon"></div>
+                </button>
+                <div class="card-body">
+                  <h3 class="text-white">JoJo's Bizarre Adventure</h3>
+                  <p class="card-text text-muted">Acompanhe as gerações da família Joestar lutando contra forças sobrenaturais e inimigos poderosos.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">190 Episódios</small>
+                  </div>
+                </div>
+                <script>
+                  function jojo() {
+                    window.open('sites-animes/anime-jojo.html', '_self');
+                  }
+                </script>
+              </div>
+            </div>
+
+            <!-- Card de Haikyu!! -->
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/capas/haikyu!!-capa.jpg" alt="Capa Haikyu!!">
+                <button class="play-button" onclick="haikyu()">
+                  <div class="play-icon"></div>
+                </button>
+                <div class="card-body">
+                  <h3 class="text-white">Haikyu!!</h3>
+                  <p class="card-text text-muted">Hinata, um jovem apaixonado por vôlei, em sua jornada para se tornar um grande jogador ao lado de sua equipe.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">75 Episódios</small>
+                  </div>
+                </div>
+                <script>
+                  function haikyu() {
+                    window.open('sites-animes/anime-haikyu.html', '_self');
+                  }
+                </script>
+              </div>
+            </div>
+
+            <!-- Card de My Hero Academia -->
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/capas/bokunohero-capa.jpg" alt="Capa My Hero Academia">
+                <button class="play-button" onclick="bokunohero()">
+                  <div class="play-icon"></div>
+                </button>
+                <div class="card-body">
+                  <h3 class="text-white">My Hero Academia</h3>
+                  <p class="card-text text-muted">Izuku, um garoto sem poderes em um mundo de heróis, luta para se tornar o maior herói.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">100 Episódios</small>
+                  </div>
+                </div>
+                <script>
+                  function bokunohero() {
+                    window.open('sites-animes/anime-bokunohero.html', '_self');
+                  }
+                </script>
+              </div>
+            </div>
+
+            <!-- Card de Demon Slayer -->
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/capas/demonslayer-capa.jpg" alt="Capa Demon Slayer">
+                <button class="play-button" onclick="demonslayer()">
+                  <div class="play-icon"></div>
+                </button>
+                <div class="card-body">
+                  <h3 class="text-white">Demon Slayer</h3>
+                  <p class="card-text text-muted">Jovem espadachim luta contra demônios para vingar sua família e salvar sua irmã, que foi transformada em demônio.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">55 Episódios</small>
+                  </div>
+                </div>
+                <script>
+                  function demonslayer() {
+                    window.open('sites-animes/anime-demonslayer.html', '_self');
+                  }
+                </script>
+              </div>
+            </div>
+
+            <!-- Card de Spy x Family -->
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/capas/spyfamily-capa.jpg" alt="Capa Spy x Family">
+                <button class="play-button" onclick="spyfamily()">
+                  <div class="play-icon"></div>
+                </button>
+                <div class="card-body">
+                  <h3 class="text-white">Spy x Family</h3>
+                  <p class="card-text text-muted">Espião finge ter uma família perfeita para uma missão, mas sua esposa é assassina e sua filha tem poderes telepáticos.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">37 Episódios</small>
+                  </div>
+                </div>
+                <script>
+                  function spyfamily() {
+                    window.open('sites-animes/anime-spyfamily.html', '_self');
+                  }
+                </script>
+              </div>
+            </div>
+
+            <!-- Card de Vinland Saga -->
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/capas/vilandsaga-capa.jpg" alt="Capa Vinland Saga">
+                <button class="play-button" onclick="vinlandsaga()">
+                  <div class="play-icon"></div>
+                </button>
+                <div class="card-body">
+                  <h3 class="text-white">Vinland Saga</h3>
+                  <p class="card-text text-muted">Jovem busca vingança pela morte de seu pai, enfrentando vikings e descobrindo o verdadeiro significado da guerra.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">24 Episódios</small>
+                  </div>
+                </div>
+                <script>
+                  function vinlandsaga() {
+                    window.open('sites-animes/anime-vilandsaga.html', '_self');
+                  }
+                </script>
+              </div>
+            </div>
+
+            <!-- Card de Demon Slayer -->
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/capas/naruto-capa.jpg" alt="Capa Demon Slayer">
+                <button class="play-button" onclick="naruto()">
+                  <div class="play-icon"></div>
+                </button>
+                <div class="card-body">
+                  <h3 class="text-white">Naruto Shippuden</h3>
+                  <p class="card-text text-muted">Naruto segue um jovem ninja determinado a se tornar Hokage, enfrentando desafios e inimigos enquanto busca aceitação.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">220 episódios</small>
+                  </div>
+                </div>
+                <script>
+                  function naruto() {
+                    window.open('sites-animes/anime-naruto.html', '_self');
+                  }
+                </script>
+              </div>
+            </div>
+
+            <!-- Card de Spy x Family -->
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/capas/bluelock-capa.jpg" alt="Capa Spy x Family">
+                <button class="play-button" onclick="bluelock()">
+                  <div class="play-icon"></div>
+                </button>
+                <div class="card-body">
+                  <h3 class="text-white">Blue Lock</h3>
+                  <p class="card-text text-muted">"Blue Lock" segue jogadores de futebol competindo em um rigoroso torneio para se tornarem o maior atacante do Japão.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">24 Episódios</small>
+                  </div>
+                </div>
+                <script>
+                  function bluelock() {
+                    window.open('sites-animes/anime-bluelock.html', '_self');
+                  }
+                </script>
+              </div>
+            </div>
+
+            <!-- Card de Vinland Saga -->
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="img/capas/dandadan-capa.jpg" alt="Capa Vinland Saga">
+                <button class="play-button" onclick="dandadan()">
+                  <div class="play-icon"></div>
+                </button>
+                <div class="card-body">
+                  <h3 class="text-white">DAN DA DAN</h3>
+                  <p class="card-text text-muted">Momo e Okarun enfrentão alienígenas e espíritos em aventuras cheias de mistérios sobrenaturais e ação.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted">12 Episódios</small>
+                  </div>
+                </div>
+                <script>
+                  function dandadan() {
+                    window.open('sites-animes/anime-dandadan.html', '_self');
+                  }
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+<!-- Navegação Inferior -->
+<div class="bottom-0 mb-4 d-flex justify-content-center w-100">
+  <ul class="nav nav-pills" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" type="button" role="tab" aria-controls="pills-page2" aria-selected="false" onclick="location.href='index.html'">1</button>
+      </li>
+      <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-page1-tab" data-bs-toggle="pill" data-bs-target="#pills-page1" type="button" role="tab" aria-controls="pills-page2" aria-selected="true">2</button>
+      </li>
+  </ul>
+</div>
+
+<!-- Link do Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Rodapé com o link para abrir o modal de Termos de Uso -->
+<footer class="footer bg-dark text-light pt-4">
+  <div class="container">
+      <p class="float-right">
+          <a href="#" class="text-white">Voltar ao Topo</a>
+      </p>
+      <div class="row">
+          <div class="col-md-3">
+              <h6>Navegação</h6>
+              <ul class="list-unstyled">
+                  <li><a href="formularios/noticias.html" class="text-light">Notícias</a></li>
+                  <li><a href="jogos/telasdejogos.html" class="text-light">Jogos</a></li>
+              </ul>
+          </div>
+          <div class="col-md-3">
+              <h6>Contate-nos</h6>
+              <ul class="list-unstyled">
+                  <li><a href="https://www.youtube.com/channel/UCelt6aArIddtKloDq_vU28w" class="text-light"><i class="bi bi-youtube"></i> YouTube</a></li>
+                  <li><a href="#" class="text-light"><i class="bi bi-facebook"></i> Facebook</a></li>
+                  <li><a href="https://x.com/NekoStream123" class="text-light"><i class="bi bi-twitter"></i> X</a></li>
+                  <li><a href="#" class="text-light"><i class="bi bi-instagram"></i> Instagram</a></li>
+                  <li><a href="https://www.tiktok.com/@nekostream123?is_from_webapp=1&sender_device=pc" class="text-light"><i class="bi bi-tiktok"></i> TikTok</a></li>
+              </ul>
+          </div>
+          <div class="col-md-3">
+              <h6>Termos</h6>
+              <ul class="list-unstyled">
+                  <!-- Link com os atributos para abrir o modal -->
+                  <li><a href="#" class="text-light" data-toggle="modal" data-target="#termsModal">Termos de Uso</a></li>
+                  <li><a href="#" class="text-light">Política de Privacidade</a></li>
+              </ul>
+          </div>
+          <div class="col-md-3">
+              <h6>Conta</h6>
+              <ul class="list-unstyled">
+                  <li><a href="formularios/singin.html" class="text-light">Criar Conta</a></li>
+                  <li><a href="formularios/login.html" class="text-light">Login</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="text-center mt-4">
+          <small>COPYRIGHT | © Neko Stream - 2024</small>
+          <br>
+          <small>DESENVOLVIDO POR Eduardo Luis de Squeira.</small>
+      </div>
+  </div>
+</footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  </body>
+  </html>

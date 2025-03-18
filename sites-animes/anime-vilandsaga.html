@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streaming Vinland Saga</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/animes.css">
+  <link rel="icon" href="img/icon.png">
+
+  <style>
+    /* O conteúdo extra é oculto quando a página é carregada */
+    #moreContent {
+      display: none;
+    }
+
+    .link-estilo {
+      color: orange;
+      text-decoration: none;
+      /* remove sublinhado */
+    }
+
+    .link-estilo:hover {
+      cursor: pointer;
+      /* faz aparecer a mãozinha */
+      text-decoration: underline;
+      /* opcional: adiciona sublinhado quando o mouse estiver sobre o link */
+    }
+
+    /* O conteúdo extra é oculto quando a página é carregada */
+    #moreContent {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Add some information about the album below, the author, or any other background
+              context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off
+              to some social networking sites or contact information.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Follow on Twitter</a></li>
+              <li><a href="#" class="text-white">Like on Facebook</a></li>
+              <li><a href="#" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="../index.html" class="navbar-brand d-flex align-items-center">
+          <img src="img/icon.png" alt="" width="10%" height="10%">
+          <strong>Neko Stream</strong>
+        </a>
+        <a href="../index.html" class="btn btn-outline-light">Volta ao menu</a>
+      </div>
+    </div>
+  </header>
+
+  <header class="bg-dark text-white p-3 text-center">
+    <h1>Streaming - Vinland Saga</h1>
+  </header>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="video-container">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/f8JrZ7Q_p-8"
+              title="Bleach Streaming" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Descrição sobre Vinland Saga -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="text-start">
+          Vinland Saga | 8.76★
+          <img src="img/16.png" style="height: 1em; width: 1em; vertical-align: middle;">
+          <span style="margin-left: 10px;">
+            <button id="likeButton" class="btn btn-outline-success btn-sm" onclick="addVote(true)">
+              👍 <span id="likeCount">0</span>
+            </button>
+            <button id="dislikeButton" class="btn btn-outline-danger btn-sm" onclick="addVote(false)">
+              👎 <span id="dislikeCount">0</span>
+            </button>
+          </span>
+        </h2>
+
+        <p>Vinland Saga é uma série de anime e mangá criada por Makoto Yukimura, que começou a ser publicada na revista
+          Weekly Young Jump em 2005. A história é ambientada na Era Viking e segue Thorfinn Karlsefni, um jovem
+          guerreiro que busca vingar a morte de seu pai, Thors, um antigo guerreiro que abandonou a vida de combate para
+          viver em paz com sua família.</p>
+        <div id="moreContent">
+          <p>A trama começa com a invasão dos Vikings na Inglaterra e o assassinato de Thors, que é morto por Askeladd,
+            um astuto e carismático líder mercenário. Motivado pela busca de vingança, Thorfinn se junta ao grupo de
+            Askeladd, infiltrando-se em sua equipe de guerreiros e lutando em batalhas sangrentas enquanto tenta se
+            tornar forte o suficiente para desafiar seu inimigo. No entanto, ao longo de suas experiências, Thorfinn
+            começa a questionar os valores da guerra, da vingança e da verdadeira natureza da força.</p>
+          <p>Vinland Saga é conhecida por sua narrativa rica e complexa, que aborda temas de honra, redenção, e o
+            impacto da violência. A obra retrata não apenas a brutalidade das batalhas, mas também as relações humanas e
+            a busca por um significado maior na vida. O mangá apresenta uma forte ênfase no desenvolvimento dos
+            personagens, explorando as motivações e conflitos internos de Thorfinn e de outros personagens, como
+            Askeladd, que possui um passado e objetivos próprios.</p>
+          <p>A adaptação para anime, que estreou em 2019, recebeu aclamação por sua animação de alta qualidade e pela
+            fidelidade ao material original. As sequências de ação são visualmente impressionantes, e a trilha sonora
+            ajuda a intensificar a emoção das cenas.</p>
+          <p>Com sua combinação de história épica, desenvolvimento de personagens e uma reflexão profunda sobre a
+            natureza humana, Vinland Saga conquistou uma base de fãs dedicada e se destacou como uma das séries mais
+            notáveis do gênero seinen. A série continua a ser apreciada por sua profundidade e narrativa envolvente,
+            explorando a jornada de Thorfinn em busca de um mundo sem guerra e seu sonho de alcançar Vinland, uma terra
+            prometida de paz.</p>
+        </div>
+        <a onclick="showMore()" class="link-estilo">Mostrar mais</a>
+      </div>
+      <div class="col-md-4">
+        <h5 style="text-align: center;">Veja também</h5>
+
+        <div class="video-container">
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ML_alfGj_ms"
+              title="Bleach Streaming" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="divider-container">
+    <canvas id="divider" width="800" height="4"></canvas>
+  </div>
+
+  <div class="comments-section">
+    <h2>Comentários</h2>
+    <div class="new-comment">
+      <input type="text" id="commentAuthor" placeholder="Seu nome">
+      <textarea id="commentText" placeholder="Escreva seu comentário..."></textarea>
+      <button onclick="addComment()">Enviar Comentário</button>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">ThorfinnFan</div>
+          <div class="comment-date">16 horas atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        O Thorfinn é um dos protagonistas mais complexos que já vi! Sua jornada de vingança e crescimento pessoal é incrivelmente bem escrita. Cada episódio me faz refletir sobre a natureza da violência e da redenção!
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">AskeladdAdmire</div>
+          <div class="comment-date">20 minutos atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        O Askeladd é um vilão fascinante! A forma como ele manipula os eventos ao seu redor e sua filosofia de vida são tão intrigantes. Ele é um personagem que deixa uma marca profunda na história!
+      </div>
+    </div>
+
+    <div class="comment">
+      <div class="comment-header">
+        <div class="comment-avatar"></div>
+        <div class="comment-info">
+          <div class="comment-author">ThorsTheLegend</div>
+          <div class="comment-date">21 dia atrás</div>
+        </div>
+      </div>
+      <div class="comment-content">
+        O Thors é um personagem tão carismático e sábio! Sua filosofia de vida e a forma como ele busca a paz são inspiradoras. Ele é um exemplo perfeito do que significa ser um verdadeiro guerreiro.
+      </div>
+    </div>
+  </div>
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>© 2024 Streaming Vinland Saga - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function drawDivider() {
+      const canvas = document.getElementById('divider');
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+
+      const gradient = ctx.createLinearGradient(0, 0, width, 0);
+      gradient.addColorStop(0, 'rgba(241, 196, 15, 0)');
+      gradient.addColorStop(0.5, 'rgba(241, 196, 15, 1)');
+      gradient.addColorStop(1, 'rgba(241, 196, 15, 0)');
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, 4);
+    }
+
+    function addComment() {
+      const author = document.getElementById('commentAuthor').value;
+      const text = document.getElementById('commentText').value;
+
+      if (!author || !text) {
+        alert('Por favor, preencha todos os campos!');
+        return;
+      }
+
+      const commentsSection = document.querySelector('.comments-section');
+      const newCommentDiv = document.createElement('div');
+      newCommentDiv.className = 'comment';
+      newCommentDiv.innerHTML = `
+        <div class="comment-header">
+            <div class="comment-avatar"></div>
+            <div class="comment-info">
+                <div class="comment-author">${author}</div>
+                <div class="comment-date">Agora mesmo</div>
+            </div>
+        </div>
+        <div class="comment-content">${text}</div>
+    `;
+
+      const firstComment = document.querySelector('.comment');
+      commentsSection.insertBefore(newCommentDiv, firstComment);
+
+      document.getElementById('commentAuthor').value = '';
+      document.getElementById('commentText').value = '';
+    }
+
+    drawDivider();
+
+    window.addEventListener('resize', function () {
+      const canvas = document.getElementById('divider');
+      canvas.width = Math.min(800, window.innerWidth - 40);
+      drawDivider();
+    });
+
+    window.dispatchEvent(new Event('resize'));
+
+    function showMore() {
+      var moreContent = document.getElementById("moreContent");
+      var link = document.querySelector(".link-estilo");
+
+      if (moreContent.style.display === "none") {
+        moreContent.style.display = "block";
+        link.textContent = "Mostrar menos";
+      } else {
+        moreContent.style.display = "none";
+        link.textContent = "Mostrar mais";
+      }
+    }
+
+    const totalViews = 920522;
+    let likeCount;
+    let dislikeCount;
+
+    function initializeCounts() {
+      likeCount = Math.floor(totalViews * (0.75 + Math.random() * 0.1));
+      dislikeCount = totalViews - likeCount;
+
+      document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+      document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+    }
+
+    function addVote(isLike) {
+      if (isLike) {
+        likeCount++;
+        document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+      } else {
+        dislikeCount++;
+        document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+      }
+    }
+
+    window.onload = initializeCounts;
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
