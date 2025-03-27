@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming Bleach</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animes.css">
+    <link rel="icon" href="img/icon.png">
+
+    <style>
+        #moreContent {
+            display: none;
+        }
+
+        .link-estilo {
+            color: orange;
+            text-decoration: none;
+        }
+
+        .link-estilo:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-muted">Add some information about the album below, the author, or any other
+                            background context. Make it a few sentences long so folks can pick up some informative
+                            tidbits. Then, link them off to some social networking sites or contact information.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+                            <li><a href="#" class="text-white">Like on Facebook</a></li>
+                            <li><a href="#" class="text-white">Email me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="../index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="img/icon.png" alt="" width="10%" height="10%">
+                    <strong>Neko Stream</strong>
+                </a>
+                <a href="../index.html" class="btn btn-outline-light">Voltar ao menu</a>
+            </div>
+        </div>
+    </header>
+
+    <header class="bg-dark text-white p-3 text-center">
+        <h1>Streaming - Bleach</h1>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="video-container">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Nq9PkH3UgEo"
+                            title="Bleach Streaming" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Descrição sobre Bleach -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="text-start">
+                    Bleach | 7.95★
+                    <img src="img/14.png" style="height: 1em; width: 1em; vertical-align: middle;">
+
+                    <span style="margin-left: 10px;">
+                        <button id="likeButton" class="btn btn-outline-success btn-sm" onclick="addVote(true)">
+                            👍 <span id="likeCount">0</span>
+                        </button>
+                        <button id="dislikeButton" class="btn btn-outline-danger btn-sm" onclick="addVote(false)">
+                            👎 <span id="dislikeCount">0</span>
+                        </button>
+                    </span>
+                </h2>
+
+                <p>Bleach é uma série de anime e mangá criada por Tite Kubo, que foi publicada originalmente na Weekly
+                    Shōnen Jump de 2001 a 2016, com um total de 74 volumes. A história segue Ichigo Kurosaki, um jovem
+                    que, após um encontro com a Shinigami Rukia Kuchiki, ganha os poderes de um Shinigami (Deus da
+                    Morte). Com esses novos poderes, Ichigo é encarregado de proteger os vivos de espíritos malignos
+                    conhecidos como Hollows, além de guiar almas perdidas para o mundo espiritual, a Soul Society.</p>
+                <div id="moreContent">
+                    <p>Ao longo da série, Ichigo descobre mais sobre seus próprios poderes e sua origem, além de se
+                        envolver em lutas contra diversos inimigos poderosos, incluindo os Arrancars, liderados pelo
+                        traidor Sōsuke Aizen, e os misteriosos Quincy, comandados por Yhwach. Bleach é conhecida por
+                        suas intensas e emocionantes batalhas, com habilidades únicas que os personagens utilizam, como
+                        o Bankai, a forma mais poderosa de uma Zanpakutō, a espada dos Shinigami.</p>
+                    <p>A série também se destaca por seu vasto elenco de personagens cativantes, cada um com suas
+                        próprias motivações, histórias e desenvolvimentos pessoais. Entre os mais notáveis estão Rukia
+                        Kuchiki, Uryū Ishida (um dos últimos Quincy), Orihime Inoue (amiga de infância de Ichigo com
+                        poderes de cura), e Yasutora "Chad" Sado, que possui uma força sobre-humana. Esses personagens,
+                        junto com Ichigo, formam um grupo que luta para proteger tanto o mundo dos vivos quanto o dos
+                        mortos.</p>
+                    <p>Com uma mistura envolvente de ação, humor, mistério e drama, Bleach conquistou uma enorme base de
+                        fãs globalmente. A série é celebrada por sua narrativa dinâmica e seus complexos temas de
+                        amizade, sacrifício e dever. Além disso, a animação impressiona com sequências de lutas
+                        visualmente espetaculares e trilhas sonoras marcantes, que acompanham os momentos mais épicos.
+                    </p>
+                    <p>Após o término do mangá, a popularidade de Bleach permaneceu forte, levando ao anúncio da
+                        adaptação do arco final, "Thousand-Year Blood War", que começou a ser transmitido em 2022, quase
+                        uma década após o final original do anime. Esse arco traz o confronto final entre os Shinigami e
+                        os Quincy, elevando a tensão e a ação da história a um novo nível.</p>
+                    <p>Bleach continua sendo uma das séries de anime e mangá mais icônicas, deixando uma marca duradoura
+                        na cultura pop e inspirando gerações de fãs e criadores ao redor do mundo.</p>
+                </div>
+                <a onclick="showMore()" class="link-estilo">Mostrar mais</a>
+            </div>
+            <div class="col-md-4">
+                <h5 style="text-align: center;">Veja também</h5>
+                <div class="video-container">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/xS6F81CV6Sw"
+                            title="Bleach Streaming" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider-container">
+        <canvas id="divider" width="800" height="4"></canvas>
+    </div>
+
+    <div class="comments-section">
+        <h2>Comentários</h2>
+        <div class="new-comment">
+            <input type="text" id="commentAuthor" placeholder="Seu nome">
+            <textarea id="commentText" placeholder="Escreva seu comentário..."></textarea>
+            <button onclick="addComment()">Enviar Comentário</button>
+        </div>
+
+        <div class="comment">
+            <div class="comment-header">
+                <div class="comment-avatar"></div>
+                <div class="comment-info">
+                    <div class="comment-author">EspadaNúmero4</div>
+                    <div class="comment-date">4 dias atrás</div>
+                </div>
+            </div>
+            <div class="comment-content">
+                Como fã do Ulquiorra, não consigo superar a luta entre ele e o Ichigo. Foi o ponto alto para mim! Espero que eles lancem mais conteúdo sobre os Espadas no futuro.
+            </div>
+        </div>
+
+        <div class="comment">
+            <div class="comment-header">
+                <div class="comment-avatar"></div>
+                <div class="comment-info">
+                    <div class="comment-author">HollowFreak</div>
+                    <div class="comment-date">5 horas atrás</div>
+                </div>
+            </div>
+            <div class="comment-content">
+                A evolução do Ichigo ao longo da série é uma das melhores coisas do anime. Ele começou como um adolescente rebelde e agora é um dos personagens mais poderosos do universo dos animes!
+            </div>
+        </div>
+
+        <div class="comment">
+            <div class="comment-header">
+                <div class="comment-avatar"></div>
+                <div class="comment-info">
+                    <div class="comment-author">BankaiMaster</div>
+                    <div class="comment-date">40 minutos atrás</div>
+                </div>
+            </div>
+            <div class="comment-content">
+                Finalmente, o arco da Guerra dos Mil Anos está aqui! Não vejo a hora de ver todos os capitães mostrando suas Bankais. Yamamoto vs. Yhwach vai ser uma luta épica!
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>© 2024 Streaming Bleach - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        function drawDivider() {
+            const canvas = document.getElementById('divider');
+            const ctx = canvas.getContext('2d');
+            const width = canvas.width;
+
+            const gradient = ctx.createLinearGradient(0, 0, width, 0);
+            gradient.addColorStop(0, 'rgba(241, 196, 15, 0)');
+            gradient.addColorStop(0.5, 'rgba(241, 196, 15, 1)');
+            gradient.addColorStop(1, 'rgba(241, 196, 15, 0)');
+
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, 4);
+        }
+
+        function addComment() {
+            const author = document.getElementById('commentAuthor').value;
+            const text = document.getElementById('commentText').value;
+
+            if (!author || !text) {
+                alert('Por favor, preencha todos os campos!');
+                return;
+            }
+
+            const commentsSection = document.querySelector('.comments-section');
+            const newCommentDiv = document.createElement('div');
+            newCommentDiv.className = 'comment';
+            newCommentDiv.innerHTML = `
+        <div class="comment-header">
+            <div class="comment-avatar"></div>
+            <div class="comment-info">
+                <div class="comment-author">${author}</div>
+                <div class="comment-date">Agora mesmo</div>
+            </div>
+        </div>
+        <div class="comment-content">${text}</div>
+    `;
+
+            const firstComment = document.querySelector('.comment');
+            commentsSection.insertBefore(newCommentDiv, firstComment);
+
+            document.getElementById('commentAuthor').value = '';
+            document.getElementById('commentText').value = '';
+        }
+
+        drawDivider();
+
+        window.addEventListener('resize', function () {
+            const canvas = document.getElementById('divider');
+            canvas.width = Math.min(800, window.innerWidth - 40);
+            drawDivider();
+        });
+
+        window.dispatchEvent(new Event('resize'));
+
+        function showMore() {
+            var moreContent = document.getElementById("moreContent");
+            var link = document.querySelector(".link-estilo");
+
+            if (moreContent.style.display === "none") {
+                moreContent.style.display = "block";
+                link.textContent = "Mostrar menos";
+            } else {
+                moreContent.style.display = "none";
+                link.textContent = "Mostrar mais";
+            }
+        }
+
+        const totalViews = 1163957;
+        let likeCount;
+        let dislikeCount;
+
+        function initializeCounts() {
+            likeCount = Math.floor(totalViews * (0.75 + Math.random() * 0.1));
+            dislikeCount = totalViews - likeCount;
+
+            document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+            document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+        }
+
+        function addVote(isLike) {
+            if (isLike) {
+                likeCount++;
+                document.getElementById("likeCount").textContent = likeCount.toLocaleString();
+            } else {
+                dislikeCount++;
+                document.getElementById("dislikeCount").textContent = dislikeCount.toLocaleString();
+            }
+        }
+
+        window.onload = initializeCounts;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
