@@ -12,7 +12,8 @@
 
   <!-- Bootstrap core CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"  rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
   <link href="album.css" rel="stylesheet">
@@ -71,15 +72,26 @@
       <div class="container d-flex justify-content-between">
         <a href="index.html" class="navbar-brand d-flex align-items-center">
           <img src="img/icon.png" alt="Neko Stream" width="50" height="50">
-          <strong>Neko Stream</strong>
+          <strong class="text-white">Neko Stream</strong>
         </a>
         <div>
           <a href="formularios/login.html" class="btn btn-outline-light">Entra na Conta</a>
           <a href="formularios/singin.html" class="btn btn-outline-light">Criar Conta</a>
         </div>
+        <div class="search-container" style="position: relative; width: 300px;">
+          <input type="text" id="searchInput" onkeyup="search()" placeholder="Pesquisar animes..."
+            style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+          <div id="searchResults"
+            style="position: absolute; background-color: #333; color: white; width: 100%; max-height: 200px; overflow-y: auto; display: none; border-radius: 5px;">
+          </div>
+        </div>
       </div>
     </div>
   </header>
+
+
+  <!-- Div para exibir os resultados da pesquisa -->
+  <div id="searchResults" class="container mt-4"></div>
 
   <main role="main">
     <section class="jumbotron text-center text-white">
@@ -424,7 +436,8 @@
             <!-- Link para abrir o modal com os Termos de Uso -->
             <li><a href="#" class="text-light" data-toggle="modal" data-target="#termsModal">Termos de Uso</a></li>
             <!-- Link para abrir o modal com a Política de Privacidade -->
-            <li><a href="#" class="text-light" data-toggle="modal" data-target="#privacyModal">Política de Privacidade</a></li>
+            <li><a href="#" class="text-light" data-toggle="modal" data-target="#privacyModal">Política de
+                Privacidade</a></li>
           </ul>
         </div>
 
@@ -508,6 +521,82 @@
     $(document).ready(function () {
       checkTerms();
     });
+
+    // Lista de animes para pesquisa com URLs atualizadas
+    const animes = [
+      { title: "Bleach", url: "sites-animes/anime-bleach.html" },
+      { title: "Jujutsu Kaisen", url: "sites-animes/anime-jujutsu.html" },
+      { title: "One Piece", url: "sites-animes/anime-onepiece.html" },
+      { title: "JoJo's Bizarre Adventure", url: "sites-animes/anime-jojosbizarreadventure.html" },
+      { title: "Haikyu!!", url: "sites-animes/anime-haikyuu!!.html" },
+      { title: "My Hero Academia", url: "sites-animes/anime-myheroacademia.html" },
+      { title: "Demon Slayer", url: "sites-animes/anime-demonslayer.html" },
+      { title: "Spy x Family", url: "sites-animes/anime-spyfamily.html" },
+      { title: "Vinland Saga", url: "sites-animes/anime-vinlandsaga.html" },
+      { title: "Naruto Shippuden", url: "sites-animes/anime-narutoshippuden.html" },
+      { title: "Blue Lock", url: "sites-animes/anime-bluelock.html" },
+      { title: "DAN DA DAN", url: "sites-animes/anime-dandadan.html" },
+      { title: "Beyblade X", url: "sites-animes/anime-beybladex.html" },
+      { title: "Black Clover", url: "sites-animes/anime-blackclover.html" },
+      { title: "Chainsaw Man", url: "sites-animes/anime-chainsawman.html" },
+      { title: "Dragonball Z", url: "sites-animes/anime-dragonballz.html" },
+      { title: "Yu-Gi-Oh!", url: "sites-animes/anime-yu-gi-oh!.html" },
+      { title: "Attack on Titan", url: "sites-animes/anime-attackontitan.html" },
+      { title: "My Dress-up Darling", url: "sites-animes/anime-mydressupdarling.html" },
+      { title: "Dr. STONE", url: "sites-animes/anime-drstone.html" },
+      { title: "Black Butler", url: "sites-animes/anime-blackbutler.html" },
+      { title: "Tokyo Revengers", url: "sites-animes/anime-tokyorevengers.html" },
+      { title: "Nichijou", url: "sites-animes/anime-nichijou.html" },
+      { title: "Mob Psycho 100", url: "sites-animes/anime-mobpsycho100.html" }
+    ];
+
+    function search() {
+      let input = document.getElementById("searchInput").value.toLowerCase();
+      let resultsBox = document.getElementById("searchResults");
+      resultsBox.innerHTML = "";
+
+      if (input === "") {
+        resultsBox.style.display = "none";
+        return;
+      }
+
+      let results = animes.filter(anime => anime.title.toLowerCase().includes(input));
+
+      if (results.length === 0) {
+        let noResult = document.createElement("p");
+        noResult.textContent = "Nenhum resultado encontrado.";
+        noResult.style.padding = "10px";
+        noResult.style.color = "black";
+        resultsBox.appendChild(noResult);
+      } else {
+        results.forEach(anime => {
+          let link = document.createElement("a");
+          link.href = anime.url;  // A URL agora aponta para as páginas específicas do anime
+          link.innerText = anime.title;
+          link.style.display = "block";
+          link.style.padding = "8px";
+          link.style.color = "white";
+          link.addEventListener("click", function () {
+            resultsBox.style.display = "none";  // Fecha a caixa de resultados
+          });
+          resultsBox.appendChild(link);
+        });
+      }
+
+      resultsBox.style.display = "block";
+    }
+
+    // Fechar resultados ao clicar fora
+    document.addEventListener("click", function (event) {
+      let resultsBox = document.getElementById("searchResults");
+      let searchBar = document.querySelector(".search-container");
+
+      if (!searchBar.contains(event.target)) {
+        resultsBox.style.display = "none";
+      }
+    });
+
+
   </script>
 </body>
 
