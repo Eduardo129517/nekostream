@@ -55,18 +55,25 @@
 </div>
 
 <header>
-    <div class="navbar navbar-dark bg-dark box-shadow">
-        <div class="container d-flex justify-content-between">
-            <a href="index.html" class="navbar-brand d-flex align-items-center">
-                <img src="img/icon.png" alt="Neko Stream" width="50" height="50">
-                <strong>Neko Stream</strong>
-            </a>
-            <div>
-                <a href="formularios/login.html" class="btn btn-outline-light">Entra na Conta</a>
-                <a href="formularios/singin.html" class="btn btn-outline-light">Criar Conta</a>
-            </div>
+  <div class="navbar navbar-dark bg-dark box-shadow">
+    <div class="container d-flex justify-content-between">
+      <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <img src="img/icon.png" alt="Neko Stream" width="50" height="50">
+        <strong class="text-white">Neko Stream</strong>
+      </a>
+      <div>
+        <a href="formularios/login.html" class="btn btn-outline-light">Entra na Conta</a>
+        <a href="formularios/singin.html" class="btn btn-outline-light">Criar Conta</a>
+      </div>
+      <div class="search-container" style="position: relative; width: 300px;">
+        <input type="text" id="searchInput" onkeyup="search()" placeholder="Pesquisar animes..."
+          style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+        <div id="searchResults"
+          style="position: absolute; background-color: #333; color: white; width: 100%; max-height: 200px; overflow-y: auto; display: none; border-radius: 5px;">
         </div>
+      </div>
     </div>
+  </div>
 </header>
 
 <main role="main">
@@ -98,7 +105,7 @@
                     </div>
                     <script>
                       function bleach() {
-                        window.open('sites-animes-anime-bleybladex.html', '_self');
+                        window.open('sites-animes/anime-beybladex.html', '_self');
                       }
                     </script>
                   </div>
@@ -108,20 +115,20 @@
             <!-- Card de Jujutsu Kaisen -->
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="img/capas/blackcolver-capa.jpg" alt="Capa Jujutsu Kaisen">
+                <img class="card-img-top" src="img/capas/Devilman-capa.jpg" alt="Capa Jujutsu Kaisen">
                 <button class="play-button" onclick="jujutsu()">
                   <div class="play-icon"></div>
                 </button>
                 <div class="card-body">
-                  <h3 class="text-white">Black Colver</h3>
-                  <p class="card-text text-muted">Black Clover segue Asta, um jovem sem magia em um mundo onde ela é essencial, determinado a se tornar o Rei Mago.</p>
+                  <h3 class="text-white">Devilman Crybaby</h3>
+                  <p class="card-text text-muted">Devilman Crybaby segue Akira, um jovem que se torna um demônio para proteger a humanidade em meio ao caos.</p>
                   <div class="d-flex justify-content-between align-items-center">
-                    <small class="text-muted">170 Episódios</small>
+                    <small class="text-muted">10 Episódios</small>
                   </div>
                 </div>
                 <script>
                   function jujutsu() {
-                    window.open('sites-animes/anime-blackcolver.html', '_self');
+                    window.open('sites-animes/anime-devilman.html', '_self');
                   }
                 </script>
               </div>
@@ -240,7 +247,7 @@
             <!-- Card de Spy x Family -->
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="img/capas/Dr.STONE.jpg" alt="Capa Spy x Family">
+                <img class="card-img-top" src="img/capas/Dr.STONE-capa.jpg" alt="Capa Spy x Family">
                 <button class="play-button" onclick="spyfamily()">
                   <div class="play-icon"></div>
                 </button>
@@ -284,7 +291,7 @@
             <!-- Card de Demon Slayer -->
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="img/capas/TokyoRevengers.jpg" alt="Capa Demon Slayer">
+                <img class="card-img-top" src="img/capas/TokyoRevengers-capa.jpg" alt="Capa Demon Slayer">
                 <button class="play-button" onclick="naruto()">
                   <div class="play-icon"></div>
                 </button>
@@ -306,7 +313,7 @@
             <!-- Card de Spy x Family -->
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="img/capas/Nichijou.jpe" alt="Capa Spy x Family">
+                <img class="card-img-top" src="img/capas/Nichijou-capa.jpe" alt="Capa Spy x Family">
                 <button class="play-button" onclick="bluelock()">
                   <div class="play-icon"></div>
                 </button>
@@ -328,7 +335,7 @@
             <!-- Card de Vinland Saga -->
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="img/capas/MobPsycho100.jpg" alt="Capa Vinland Saga">
+                <img class="card-img-top" src="img/capas/MobPsycho100-capa.jpg" alt="Capa Vinland Saga">
                 <button class="play-button" onclick="dandadan()">
                   <div class="play-icon"></div>
                 </button>
@@ -418,5 +425,100 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   
+  <script>
+    function checkTerms() {
+      if (!localStorage.getItem('termsAccepted')) {
+        $('#termsModal').modal('show');
+      }
+    }
+
+    function acceptTerms() {
+      localStorage.setItem('termsAccepted', 'true');
+      $('#termsModal').modal('hide');
+    }
+
+    function denyTerms() {
+      window.location.href = 'https://www.google.com';
+    }
+
+    $(document).ready(function () {
+      checkTerms();
+    });
+
+    const animes = [
+  { title: "Bleach", url: "sites-animes/anime-bleach.html" },
+  { title: "Jujutsu Kaisen", url: "sites-animes/anime-jujutsu.html" },
+  { title: "One Piece", url: "sites-animes/anime-onepiece.html" },
+  { title: "JoJo's Bizarre Adventure", url: "sites-animes/anime-jojo.html" },
+  { title: "Haikyu!!", url: "sites-animes/anime-haikyu.html" },
+  { title: "My Hero Academia", url: "sites-animes/anime-bokunohero.html" },
+  { title: "Demon Slayer", url: "sites-animes/anime-demonslayer.html" },
+  { title: "Spy x Family", url: "sites-animes/anime-spyfamily.html" },
+  { title: "Vinland Saga", url: "sites-animes/anime-vilandsaga.html" },
+  { title: "Naruto Shippuden", url: "sites-animes/anime-naruto.html" },
+  { title: "Blue Lock", url: "sites-animes/anime-bluelock.html" },
+  { title: "DAN DA DAN", url: "sites-animes/anime-dandadan.html" },
+  { title: "Beyblade X", url: "sites-animes/anime-beybladex.html" },
+  { title: "Devilman", url: "sites-animes/anime-devilman.html" },
+  { title: "Chainsaw Man", url: "sites-animes/anime-chainsawman.html" },
+  { title: "Dragonball Z", url: "sites-animes/anime-dragonballz.html" },
+  { title: "Yu-Gi-Oh!", url: "sites-animes/anime-yu-go-oh!.html" },
+  { title: "Attack on Titan", url: "sites-animes/anime-attackontitan.html" },
+  { title: "My Dress-up Darling", url: "sites-animes/anime-mydressupdarling.html" },
+  { title: "Dr. STONE", url: "sites-animes/anime-drstone.html" },
+  { title: "Black Butler", url: "sites-animes/anime-blackbuler.html" },
+  { title: "Tokyo Revengers", url: "sites-animes/anime-tokyorevengers.html" },
+  { title: "Nichijou", url: "sites-animes/anime-nichijou.html" },
+  { title: "Mob Psycho 100", url: "sites-animes/anime-mobpsycho100.html" }
+];
+
+    function search() {
+      let input = document.getElementById("searchInput").value.toLowerCase();
+      let resultsBox = document.getElementById("searchResults");
+      resultsBox.innerHTML = "";
+
+      if (input === "") {
+        resultsBox.style.display = "none";
+        return;
+      }
+
+      let results = animes.filter(anime => anime.title.toLowerCase().includes(input));
+
+      if (results.length === 0) {
+        let noResult = document.createElement("p");
+        noResult.textContent = "Nenhum resultado encontrado.";
+        noResult.style.padding = "10px";
+        noResult.style.color = "black";
+        resultsBox.appendChild(noResult);
+      } else {
+        results.forEach(anime => {
+          let link = document.createElement("a");
+          link.href = anime.url;  // A URL agora aponta para as páginas específicas do anime
+          link.innerText = anime.title;
+          link.style.display = "block";
+          link.style.padding = "8px";
+          link.style.color = "white";
+          link.addEventListener("click", function () {
+            resultsBox.style.display = "none";  // Fecha a caixa de resultados
+          });
+          resultsBox.appendChild(link);
+        });
+      }
+
+      resultsBox.style.display = "block";
+    }
+
+    // Fechar resultados ao clicar fora
+    document.addEventListener("click", function (event) {
+      let resultsBox = document.getElementById("searchResults");
+      let searchBar = document.querySelector(".search-container");
+
+      if (!searchBar.contains(event.target)) {
+        resultsBox.style.display = "none";
+      }
+    });
+
+
+  </script>
   </body>
   </html>
